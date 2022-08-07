@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/features/wetw22/domain/entities/activity.dart';
@@ -25,7 +26,8 @@ class WTEWTimeline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => debugPrint(timeline.order.toString()),
+      onTap: () => Navigator.pushNamed(context, AppRoutes.noteRoute,
+          arguments: timeline.notes),
       child: Row(
         children: [
           Column(
