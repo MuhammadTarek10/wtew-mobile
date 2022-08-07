@@ -3,6 +3,7 @@ import 'package:wtew22/app/splash_view.dart';
 import 'package:wtew22/features/wetw22/domain/entities/day.dart';
 import 'package:wtew22/features/wetw22/domain/entities/note.dart';
 import 'package:wtew22/features/wetw22/presentation/views/home_view.dart';
+import 'package:wtew22/features/wetw22/presentation/views/note/note_details_view.dart';
 import 'package:wtew22/features/wetw22/presentation/views/note/note_view.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/day_view.dart';
 
@@ -11,6 +12,7 @@ class AppRoutes {
   static const String homeRoute = "/home";
   static const String timelineRoute = "/timeline";
   static const String noteRoute = "/note";
+  static const String noteDetailRoute = "/note_detail";
 }
 
 class AppRouteGenerator {
@@ -22,9 +24,13 @@ class AppRouteGenerator {
         return MaterialPageRoute(builder: (_) => HomeView());
       case AppRoutes.timelineRoute:
         return MaterialPageRoute(
-            builder: (_) => TimelineView(day: settings.arguments as Day));
+            builder: (_) => DayView(day: settings.arguments as Day));
       case AppRoutes.noteRoute:
-        return MaterialPageRoute(builder: (_) => NoteView(notes: settings.arguments as List<Note>));
+        return MaterialPageRoute(
+            builder: (_) => NoteView(notes: settings.arguments as List<Note>));
+      case AppRoutes.noteDetailRoute:
+        return MaterialPageRoute(
+            builder: (_) => NoteDetailsView(note: settings.arguments as Note));
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

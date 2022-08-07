@@ -9,7 +9,7 @@ import 'package:wtew22/features/wetw22/domain/entities/note.dart';
 class HomeView extends StatelessWidget {
   HomeView({Key? key}) : super(key: key);
 
-  final List<Day> days = [
+  final List<Day> days = const [
     Day(
       id: "1",
       name: "Day 1",
@@ -223,11 +223,12 @@ class HomeView extends StatelessWidget {
         title: const Text(AppStrings.homeViewTitle),
       ),
       body: ListView.builder(
-          itemBuilder: (context, index) => HomeCard(
-                day: days[index],
-                length: days.length,
-              ),
-          itemCount: days.length),
+        itemBuilder: (context, index) => HomeCard(
+          day: days[index],
+          length: days.length,
+        ),
+        itemCount: days.length,
+      ),
     );
   }
 }

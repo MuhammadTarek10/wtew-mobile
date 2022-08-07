@@ -4,10 +4,11 @@ import 'package:wtew22/config/utils/app_strings.dart';
 import 'package:wtew22/features/wetw22/domain/entities/day.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/widgets/timeline_card.dart';
 
-class TimelineView extends StatelessWidget {
-  const TimelineView({Key? key, required this.day}) : super(key: key);
+class DayView extends StatelessWidget {
+  DayView({Key? key, required this.day}) : super(key: key);
 
   final Day day;
+  var currentIdx = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +34,9 @@ class TimelineView extends StatelessWidget {
             icon: Icon(Icons.note),
           ),
         ],
-        currentIndex: 0,
+        currentIndex: currentIdx,
         onTap: (value) {
+          if (value == currentIdx) return;
           switch (value) {
             case 0:
               Navigator.pushNamed(context, AppRoutes.timelineRoute,
