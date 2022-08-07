@@ -62,12 +62,7 @@ class WTEWTimeline extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                border: const Border(
-                  top: BorderSide(color: AppColors.primaryColor, width: 2),
-                  bottom: BorderSide(color: AppColors.primaryColor, width: 2),
-                  left: BorderSide(color: AppColors.primaryColor, width: 2),
-                  right: BorderSide(color: AppColors.primaryColor, width: 2),
-                ),
+                border: Border.all(color: AppColors.primaryColor, width: 2),
                 boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
