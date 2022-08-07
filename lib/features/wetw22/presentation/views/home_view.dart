@@ -6,7 +6,7 @@ import 'package:wtew22/features/wetw22/domain/entities/note.dart';
 import 'package:wtew22/features/wetw22/presentation/widgets/day_card.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
   final List<Day> days = const [
     Day(
