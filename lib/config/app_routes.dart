@@ -6,11 +6,13 @@ import 'package:wtew22/features/wetw22/presentation/views/home_view.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/day_view.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/note/note_details_view.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/note/note_view.dart';
+import 'package:wtew22/features/wetw22/presentation/views/timeline/widgets/timeline_note_view.dart';
 
 class AppRoutes {
   static const String splashRoute = "/";
   static const String homeRoute = "/home";
   static const String timelineRoute = "/timeline";
+  static const String timelineNoteRoute = "/timeline/note";
   static const String noteRoute = "/note";
   static const String noteDetailRoute = "/note_detail";
 }
@@ -25,6 +27,10 @@ class AppRouteGenerator {
       case AppRoutes.timelineRoute:
         return MaterialPageRoute(
             builder: (_) => DayView(day: settings.arguments as Day));
+      case AppRoutes.timelineNoteRoute:
+        return MaterialPageRoute(
+            builder: (_) =>
+                TimelineNoteView(notes: settings.arguments as List<Note>));
       case AppRoutes.noteRoute:
         return MaterialPageRoute(
             builder: (_) => NoteView(notes: settings.arguments as List<Note>));

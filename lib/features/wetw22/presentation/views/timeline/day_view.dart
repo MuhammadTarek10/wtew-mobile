@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wtew22/features/wetw22/domain/entities/day.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/note/note_view.dart';
-import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/timeline_page.dart';
+import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/timeline_view.dart';
 
 class DayView extends StatefulWidget {
   const DayView({Key? key, required this.day}) : super(key: key);

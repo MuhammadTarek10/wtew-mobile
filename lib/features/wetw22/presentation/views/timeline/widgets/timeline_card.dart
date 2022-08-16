@@ -26,7 +26,7 @@ class WTEWTimeline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushNamed(context, AppRoutes.noteRoute,
+      onTap: () => Navigator.pushNamed(context, AppRoutes.timelineNoteRoute,
           arguments: timeline.notes),
       child: Row(
         children: [
