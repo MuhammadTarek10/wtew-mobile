@@ -1,28 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
 import 'package:wtew22/features/wetw22/domain/entities/day.dart';
-import 'package:wtew22/features/wetw22/presentation/views/timeline/widgets/timeline_card.dart';
+import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/note/note_view.dart';
+import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/timeline_page.dart';
 
-class DayView extends StatelessWidget {
-  DayView({Key? key, required this.day}) : super(key: key);
+class DayView extends StatefulWidget {
+  const DayView({Key? key, required this.day}) : super(key: key);
 
   final Day day;
+
+  @override
+  // ignore: no_logic_in_create_state
+  State<DayView> createState() => _DayViewState(day: day);
+}
+
+class _DayViewState extends State<DayView> {
+  _DayViewState({required this.day});
+
+  final Day day;
+
   var currentIdx = 0;
+
+  late List<Widget> pages;
+  var title = "Timeline";
+  List<String> titles = ["Timeline", "Notes"];
+
+  @override
+  void initState() {
+    super.initState();
+    pages = [
+      TimelineView(day: day),
+      NoteView(notes: day.notes),
+    ];
+  }
+
+  void onTap(int index) {
+    setState(() {
+      currentIdx = index;
+      title = titles[index];
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(AppStrings.timelineViewTitle),
+        title: Text(title),
       ),
-      body: Center(
-        child: ListView.builder(
-          itemCount: day.activities.length,
-          itemBuilder: (context, index) => WTEWTimeline(
-              timeline: day.activities[index], length: day.activities.length),
-        ),
-      ),
+      body: pages[currentIdx],
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
@@ -35,19 +59,7 @@ class DayView extends StatelessWidget {
           ),
         ],
         currentIndex: currentIdx,
-        onTap: (value) {
-          if (value == currentIdx) return;
-          switch (value) {
-            case 0:
-              Navigator.pushNamed(context, AppRoutes.timelineRoute,
-                  arguments: day);
-              break;
-            case 1:
-              Navigator.pushNamed(context, AppRoutes.noteRoute,
-                  arguments: day.notes);
-              break;
-          }
-        },
+        onTap: onTap,
       ),
     );
   }
