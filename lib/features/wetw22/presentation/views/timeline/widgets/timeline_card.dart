@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
@@ -15,13 +13,6 @@ class WTEWTimeline extends StatelessWidget {
 
   final Activity timeline;
   final int length;
-
-  // get a random color
-  Color getRandomColor() {
-    final random = Random();
-    return Color.fromARGB(
-        255, random.nextInt(255), random.nextInt(10), random.nextInt(255));
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/features/wetw22/domain/entities/note.dart';
 
+// ignore: must_be_immutable
 class NoteView extends StatelessWidget {
   NoteView({Key? key, required this.notes}) : super(key: key);
 
