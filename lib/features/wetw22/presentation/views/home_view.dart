@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
@@ -261,6 +262,40 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: cureved(),
+    );
+  }
+
+  BottomNavigationBar normal() {
+    return BottomNavigationBar(
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: "Home",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search),
+          label: "search",
+        ),
+      ],
+    );
+  }
+
+  CurvedNavigationBar cureved() {
+    return CurvedNavigationBar(
+      backgroundColor: AppColors.accentColor,
+      items: [
+        Icon(
+          Icons.home,
+          size: 30,
+          color: Colors.black,
+        ),
+        Icon(
+          Icons.search,
+          size: 30,
+          color: Colors.black,
+        ),
+      ],
     );
   }
 }
