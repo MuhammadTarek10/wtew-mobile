@@ -3,6 +3,7 @@ class AppStrings {
 
   // home view
   static const String homeViewTitle = "Home";
+  static const String welcomeMessage = "Welcome to Engineers World '22";
 
   // timeline view
   static const String timelineViewTitle = "Timeline";

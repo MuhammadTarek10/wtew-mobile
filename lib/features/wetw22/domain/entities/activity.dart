@@ -7,10 +7,12 @@ class Activity extends Equatable {
   final String id;
   final int order;
   final String instructor;
+  final String place;
   final ActivityType activityType;
   final List<Note> notes;
   final String title;
   final String description;
+  final String dayDate;
   final String startDate;
   final String endDate;
 
@@ -18,10 +20,12 @@ class Activity extends Equatable {
     required this.id,
     required this.order,
     required this.instructor,
+    required this.place,
     required this.activityType,
     required this.notes,
     required this.title,
     required this.description,
+    required this.dayDate,
     required this.startDate,
     required this.endDate,
   });
@@ -31,6 +35,7 @@ class Activity extends Equatable {
         id,
         order,
         instructor,
+        place,
         activityType,
         notes,
         title,
