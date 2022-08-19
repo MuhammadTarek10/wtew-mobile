@@ -218,9 +218,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.homeViewTitle),
-      ),
+      appBar: AppBar(title: const Text(AppStrings.homeViewTitle)),
       body: ListView.builder(
         itemBuilder: (context, index) => DayCard(
           day: days[index],
