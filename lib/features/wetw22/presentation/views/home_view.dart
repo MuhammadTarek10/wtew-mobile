@@ -1,8 +1,9 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
-import 'package:wtew22/config/utils/app_values.dart';
 import 'package:wtew22/features/wetw22/domain/entities/activity.dart';
 import 'package:wtew22/features/wetw22/domain/entities/day.dart';
 import 'package:wtew22/features/wetw22/domain/entities/note.dart';
@@ -19,7 +20,8 @@ class HomeView extends StatelessWidget {
         Note(
           id: "1",
           title: "Note 1",
-          description: "Content 1",
+          description: ["Content 1"],
+          imagePath: AppAssets.smuLogo,
         )
       ],
       activities: [
@@ -32,7 +34,26 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: [
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+              "Description 1",
+            ],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 1",
           description: "About",
@@ -49,7 +70,8 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: ["Description 1"],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 1",
           description: "About",
@@ -66,7 +88,8 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: ["Description 1"],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 1",
           description: "About",
@@ -83,7 +106,8 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: ["Description 1"],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 1",
           description: "About",
@@ -101,7 +125,8 @@ class HomeView extends StatelessWidget {
         Note(
           id: "1",
           title: "Note 2",
-          description: "Content 2",
+          description: ["Content 2"],
+          imagePath: AppAssets.smuLogo,
         )
       ],
       activities: [
@@ -114,7 +139,8 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: ["Description 1"],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 2",
           description: "About",
@@ -131,7 +157,8 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: ["Description 1"],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 2",
           description: "About",
@@ -148,7 +175,8 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: ["Description 1"],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 2",
           description: "About",
@@ -165,7 +193,8 @@ class HomeView extends StatelessWidget {
           note: Note(
             id: "1",
             title: "Note 1",
-            description: "Description 1",
+            description: ["Description 1"],
+            imagePath: AppAssets.smuLogo,
           ),
           title: "Session 2",
           description: "About",
@@ -190,168 +219,41 @@ class HomeView extends StatelessWidget {
             color: Colors.black,
           ),
         ),
+        actions: [
+          buildHelpButton(context),
+        ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: days.length,
-              itemBuilder: (context, index) {
-                return DayCard(
-                  day: days[index],
-                  length: days.length,
-                );
-              },
-            ),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: days.length,
+        itemBuilder: (context, index) {
+          return DayCard(
+            day: days[index],
+            length: days.length,
+          );
+        },
       ),
     );
   }
-}
 
-class TimelineTile extends StatelessWidget {
-  const TimelineTile({
-    Key? key,
-    required this.activity,
-  }) : super(key: key);
-
-  final Activity activity;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: InkWell(
-        onTap: () {},
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(
-                    context.width * 0.02,
-                  ),
-                  child: Text(
-                    activity.place,
-                    style: TextStyle(
-                      fontSize: context.height * 0.02,
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(
-                    context.width * 0.02,
-                  ),
-                  child: Text(
-                    activity.dayDate,
-                    style: TextStyle(
-                      fontSize: context.height * 0.015,
-                      color: Colors.black.withOpacity(0.5),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              padding: EdgeInsets.all(
-                context.width * AppPadding.headerPadding,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    height: context.height * 0.1,
-                    width: context.width * 0.5,
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(8),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: AppColors.primaryColor,
-                          blurRadius: 5,
-                          spreadRadius: 0.5,
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.only(
-                            left: context.width * AppPadding.headerPadding,
-                          ),
-                          child: Text(
-                            activity.title,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize:
-                                  context.height * AppPadding.headerPadding,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: context.height * 0.002),
-                        Container(
-                          padding: EdgeInsets.only(
-                            left: context.width * 0.03,
-                          ),
-                          child: Text(
-                            activity.instructor,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: context.height * 0.015,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    height: context.height * 0.1,
-                    width: context.width * 0.2,
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(8),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: AppColors.primaryColor,
-                          blurRadius: 5,
-                          spreadRadius: 0.5,
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          activity.startDate,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: context.height * 0.017,
-                          ),
-                        ),
-                        SizedBox(height: context.height * 0.002),
-                        Text(
-                          activity.endDate,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: context.height * 0.017,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+  Widget buildHelpButton(BuildContext context) {
+    return IconButton(
+      onPressed: () => AwesomeDialog(
+        context: context,
+        animType: AnimType.SCALE,
+        customHeader: Image.asset(AppAssets.smuLogoNoText),
+        title: AppStrings.welcomeMessage,
+        desc: "ASD\nASD\nASD\nASD\nASD\nASD\n",
+        btnOkText: AppStrings.goToSmuPage,
+        btnOkOnPress: () async => await launchUrl(
+          Uri.parse(AppStrings.smuPage),
         ),
+        btnOkColor: AppColors.primaryColor,
+        btnCancelText: AppStrings.cancel,
+        btnCancelOnPress: () {},
+      ).show(),
+      icon: const Icon(
+        Icons.help,
+        color: Colors.black,
       ),
     );
   }

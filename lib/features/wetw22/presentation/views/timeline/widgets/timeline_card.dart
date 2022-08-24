@@ -112,7 +112,7 @@ class WTEWTimeline extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    Image.asset(AppAssets.smuLogo),
+                    Center(child: Image.asset(AppAssets.smuLogoNoText)),
                   ],
                 ),
               ),

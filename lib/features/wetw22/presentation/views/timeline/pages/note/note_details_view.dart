@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
+import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/features/wetw22/domain/entities/note.dart';
 
 class NoteDetailsView extends StatelessWidget {
@@ -11,96 +11,16 @@ class NoteDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          buildSliverAppBar(),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-                buildDivider(315),
-              ],
-            ),
-          )
-        ],
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return [buildSliverAppBar()];
+        },
+        body: ListView.builder(
+          itemCount: note.description.length,
+          itemBuilder: (context, index) => buildInfo(
+            note.description[index],
+          ),
+        ),
       ),
     );
   }
@@ -118,7 +38,7 @@ class NoteDetailsView extends StatelessWidget {
         ),
         background: Hero(
           tag: note.id,
-          child: Image.asset(AppAssets.smuLogo),
+          child: Image.asset(note.imagePath),
         ),
       ),
     );
@@ -130,6 +50,29 @@ class NoteDetailsView extends StatelessWidget {
       endIndent: endIndent,
       color: AppColors.primaryColor,
       thickness: 2,
+    );
+  }
+
+  Widget buildInfo(String description) {
+    return Container(
+      margin: const EdgeInsets.all(8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          RichText(
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: "• $description",
+                ),
+              ],
+            ),
+          ),
+          buildDivider(315),
+        ],
+      ),
     );
   }
 }
