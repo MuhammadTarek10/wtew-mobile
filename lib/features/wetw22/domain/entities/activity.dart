@@ -9,7 +9,7 @@ class Activity extends Equatable {
   final String instructor;
   final String place;
   final ActivityType activityType;
-  final List<Note> notes;
+  final Note note;
   final String title;
   final String description;
   final String dayDate;
@@ -22,7 +22,7 @@ class Activity extends Equatable {
     required this.instructor,
     required this.place,
     required this.activityType,
-    required this.notes,
+    required this.note,
     required this.title,
     required this.description,
     required this.dayDate,
@@ -37,7 +37,7 @@ class Activity extends Equatable {
         instructor,
         place,
         activityType,
-        notes,
+        note,
         title,
         description,
         startDate,

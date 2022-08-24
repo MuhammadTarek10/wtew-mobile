@@ -29,18 +29,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 1",
           description: "About",
           dayDate: "25 September",
@@ -53,18 +46,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 1",
           description: "About",
           dayDate: "25 September",
@@ -77,18 +63,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 1",
           description: "About",
           dayDate: "25 September",
@@ -101,18 +80,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 1",
           description: "About",
           dayDate: "25 September",
@@ -139,18 +111,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 2",
           description: "About",
           dayDate: "25 September",
@@ -163,18 +128,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 2",
           description: "About",
           dayDate: "25 September",
@@ -187,18 +145,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 2",
           description: "About",
           dayDate: "25 September",
@@ -211,18 +162,11 @@ class HomeView extends StatelessWidget {
           instructor: "Tarek",
           activityType: ActivityType.session,
           place: "K1 - Electrical Building",
-          notes: [
-            Note(
-              id: "1",
-              title: "Note 1",
-              description: "Description 1",
-            ),
-            Note(
-              id: "2",
-              title: "Note 2",
-              description: "Description 2",
-            ),
-          ],
+          note: Note(
+            id: "1",
+            title: "Note 1",
+            description: "Description 1",
+          ),
           title: "Session 2",
           description: "About",
           dayDate: "25 September",

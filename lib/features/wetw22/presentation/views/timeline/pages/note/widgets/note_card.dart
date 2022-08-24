@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/app_routes.dart';
+import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 
 import 'package:wtew22/features/wetw22/domain/entities/note.dart';
@@ -38,11 +39,8 @@ class NoteCard extends StatelessWidget {
           child: Hero(
             tag: note.id,
             child: Center(
-                child: Text(
-              note.description,
-              overflow: TextOverflow.ellipsis,
-              maxLines: 1,
-            )),
+              child: Image.asset(AppAssets.smuLogo),
+            ),
           ),
         ),
       ),

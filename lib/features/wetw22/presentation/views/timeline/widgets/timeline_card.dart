@@ -7,23 +7,23 @@ import 'package:wtew22/features/wetw22/domain/entities/activity.dart';
 class WTEWTimeline extends StatelessWidget {
   const WTEWTimeline({
     Key? key,
-    required this.timeline,
+    required this.activity,
     required this.length,
   }) : super(key: key);
 
-  final Activity timeline;
+  final Activity activity;
   final int length;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Navigator.pushNamed(context, AppRoutes.timelineNoteRoute,
-          arguments: timeline.notes),
+      onTap: () => Navigator.pushNamed(context, AppRoutes.noteDetailRoute,
+          arguments: activity.note),
       child: Row(
         children: [
           Column(
             children: [
-              timeline.order == 1
+              activity.order == 1
                   ? Container(
                       height: 50,
                     )
@@ -40,13 +40,13 @@ class WTEWTimeline extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: Icon(
-                  timeline.activityType == ActivityType.session
+                  activity.activityType == ActivityType.session
                       ? Icons.people
                       : Icons.foundation,
                   color: Colors.white,
                 ),
               ),
-              timeline.order == length
+              activity.order == length
                   ? Container(
                       height: 50,
                     )
@@ -81,7 +81,7 @@ class WTEWTimeline extends StatelessWidget {
                       children: [
                         FittedBox(
                           child: Text(
-                            timeline.title,
+                            activity.title,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
@@ -92,7 +92,7 @@ class WTEWTimeline extends StatelessWidget {
                         ),
                         FittedBox(
                           child: Text(
-                            timeline.description,
+                            activity.description,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
@@ -101,7 +101,7 @@ class WTEWTimeline extends StatelessWidget {
                         ),
                         FittedBox(
                           child: Text(
-                            "${timeline.startDate} - ${timeline.endDate}",
+                            "${activity.startDate} - ${activity.endDate}",
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(

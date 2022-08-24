@@ -13,7 +13,7 @@ class TimelineView extends StatelessWidget {
       child: ListView.builder(
         itemCount: day.activities.length,
         itemBuilder: (context, index) => WTEWTimeline(
-            timeline: day.activities[index], length: day.activities.length),
+            activity: day.activities[index], length: day.activities.length),
       ),
     );
   }
