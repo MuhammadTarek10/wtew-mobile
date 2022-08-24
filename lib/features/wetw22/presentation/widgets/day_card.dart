@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
+import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/features/wetw22/domain/entities/day.dart';
 
 class DayCard extends StatelessWidget {
@@ -23,7 +24,7 @@ class DayCard extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height / (length + 1),
+            height: context.height / (length + 1),
             decoration: BoxDecoration(
               color: AppColors.primaryColor,
               borderRadius: BorderRadius.circular(10),

@@ -23,11 +23,15 @@ class WTEWTimeline extends StatelessWidget {
         children: [
           Column(
             children: [
-              Container(
-                height: 50,
-                width: 2,
-                color: timeline.order == 1 ? Colors.white : Colors.black,
-              ),
+              timeline.order == 1
+                  ? Container(
+                      height: 50,
+                    )
+                  : Container(
+                      height: 50,
+                      width: 2,
+                      color: Colors.black,
+                    ),
               Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
                 padding: const EdgeInsets.all(5),
@@ -42,11 +46,15 @@ class WTEWTimeline extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              Container(
-                height: 50,
-                width: 2,
-                color: timeline.order == length ? Colors.white : Colors.black,
-              ),
+              timeline.order == length
+                  ? Container(
+                      height: 50,
+                    )
+                  : Container(
+                      height: 50,
+                      width: 2,
+                      color: Colors.black,
+                    ),
             ],
           ),
           Expanded(

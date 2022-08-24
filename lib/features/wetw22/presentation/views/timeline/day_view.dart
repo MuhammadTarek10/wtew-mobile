@@ -16,8 +16,8 @@ class DayView extends StatefulWidget {
 class _DayViewState extends State<DayView> {
   _DayViewState({required this.day});
 
+  late final PageController pageController;
   final Day day;
-
   var currentIdx = 0;
 
   late List<Widget> pages;
@@ -31,6 +31,13 @@ class _DayViewState extends State<DayView> {
       TimelineView(day: day),
       NoteView(notes: day.notes),
     ];
+    pageController = PageController(initialPage: currentIdx);
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
   }
 
   void onTap(int index) {
@@ -38,6 +45,11 @@ class _DayViewState extends State<DayView> {
       currentIdx = index;
       title = titles[index];
     });
+    pageController.animateToPage(
+      currentIdx,
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
+    );
   }
 
   @override
@@ -46,7 +58,10 @@ class _DayViewState extends State<DayView> {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: pages[currentIdx],
+      body: PageView(
+        controller: pageController,
+        children: pages,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(

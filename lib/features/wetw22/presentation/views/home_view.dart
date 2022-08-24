@@ -1,11 +1,12 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
+import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
 import 'package:wtew22/config/utils/app_values.dart';
 import 'package:wtew22/features/wetw22/domain/entities/activity.dart';
 import 'package:wtew22/features/wetw22/domain/entities/day.dart';
 import 'package:wtew22/features/wetw22/domain/entities/note.dart';
+import 'package:wtew22/features/wetw22/presentation/widgets/day_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -238,7 +239,6 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.accentColor,
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: AppColors.accentColor,
         title: const Text(
           AppStrings.welcomeMessage,
@@ -252,50 +252,17 @@ class HomeView extends StatelessWidget {
           children: [
             ListView.builder(
               shrinkWrap: true,
-              itemCount: days[0].activities.length,
+              itemCount: days.length,
               itemBuilder: (context, index) {
-                return TimelineTile(
-                  activity: days[0].activities[index],
+                return DayCard(
+                  day: days[index],
+                  length: days.length,
                 );
               },
             ),
           ],
         ),
       ),
-      bottomNavigationBar: cureved(),
-    );
-  }
-
-  BottomNavigationBar normal() {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: "Home",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: "search",
-        ),
-      ],
-    );
-  }
-
-  CurvedNavigationBar cureved() {
-    return CurvedNavigationBar(
-      backgroundColor: AppColors.accentColor,
-      items: [
-        Icon(
-          Icons.home,
-          size: 30,
-          color: Colors.black,
-        ),
-        Icon(
-          Icons.search,
-          size: 30,
-          color: Colors.black,
-        ),
-      ],
     );
   }
 }
@@ -321,23 +288,23 @@ class TimelineTile extends StatelessWidget {
               children: [
                 Container(
                   padding: EdgeInsets.all(
-                    MediaQuery.of(context).size.width * 0.02,
+                    context.width * 0.02,
                   ),
                   child: Text(
                     activity.place,
                     style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height * 0.02,
+                      fontSize: context.height * 0.02,
                     ),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.all(
-                    MediaQuery.of(context).size.width * 0.02,
+                    context.width * 0.02,
                   ),
                   child: Text(
                     activity.dayDate,
                     style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height * 0.015,
+                      fontSize: context.height * 0.015,
                       color: Colors.black.withOpacity(0.5),
                     ),
                   ),
@@ -346,15 +313,15 @@ class TimelineTile extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.all(
-                MediaQuery.of(context).size.width * AppPadding.headerPadding,
+                context.width * AppPadding.headerPadding,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     padding: const EdgeInsets.all(16),
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    width: MediaQuery.of(context).size.width * 0.5,
+                    height: context.height * 0.1,
+                    width: context.width * 0.5,
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor,
                       borderRadius: BorderRadius.circular(8),
@@ -372,30 +339,27 @@ class TimelineTile extends StatelessWidget {
                       children: [
                         Container(
                           padding: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width *
-                                AppPadding.headerPadding,
+                            left: context.width * AppPadding.headerPadding,
                           ),
                           child: Text(
                             activity.title,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: MediaQuery.of(context).size.height *
-                                  AppPadding.headerPadding,
+                              fontSize:
+                                  context.height * AppPadding.headerPadding,
                             ),
                           ),
                         ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.002),
+                        SizedBox(height: context.height * 0.002),
                         Container(
                           padding: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width * 0.03,
+                            left: context.width * 0.03,
                           ),
                           child: Text(
                             activity.instructor,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.015,
+                              fontSize: context.height * 0.015,
                             ),
                           ),
                         ),
@@ -404,8 +368,8 @@ class TimelineTile extends StatelessWidget {
                   ),
                   Container(
                     padding: const EdgeInsets.all(16),
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    width: MediaQuery.of(context).size.width * 0.2,
+                    height: context.height * 0.1,
+                    width: context.width * 0.2,
                     decoration: BoxDecoration(
                       color: AppColors.primaryColor,
                       borderRadius: BorderRadius.circular(8),
@@ -425,18 +389,15 @@ class TimelineTile extends StatelessWidget {
                           activity.startDate,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize:
-                                MediaQuery.of(context).size.height * 0.017,
+                            fontSize: context.height * 0.017,
                           ),
                         ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.002),
+                        SizedBox(height: context.height * 0.002),
                         Text(
                           activity.endDate,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize:
-                                MediaQuery.of(context).size.height * 0.017,
+                            fontSize: context.height * 0.017,
                           ),
                         ),
                       ],
@@ -446,27 +407,6 @@ class TimelineTile extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Headline extends StatelessWidget {
-  const Headline({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      margin: const EdgeInsets.all(16),
-      child: Text(
-        AppStrings.welcomeMessage,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: MediaQuery.of(context).size.height * 0.025,
         ),
       ),
     );
