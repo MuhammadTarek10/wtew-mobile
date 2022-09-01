@@ -42,7 +42,7 @@ class _SplashViewState extends State<SplashView> {
       backgroundColor: AppColors.splashBackgroundColor,
       body: Center(
         child: Image(
-          image: AssetImage(AppAssets.smuLogo),
+          image: AssetImage(AppAssets.splash),
         ),
       ),
     );

@@ -242,7 +242,7 @@ class HomeView extends StatelessWidget {
         animType: AnimType.SCALE,
         customHeader: Image.asset(AppAssets.smuLogoNoText),
         title: AppStrings.welcomeMessage,
-        desc: "ASD\nASD\nASD\nASD\nASD\nASD\n",
+        desc: AppStrings.eventDiscription,
         btnOkText: AppStrings.goToSmuPage,
         btnOkOnPress: () async => await launchUrl(
           Uri.parse(AppStrings.smuPage),
