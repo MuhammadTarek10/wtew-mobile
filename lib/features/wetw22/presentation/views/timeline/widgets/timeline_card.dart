@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
+import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/features/wetw22/domain/entities/activity.dart';
 
 class WTEWTimeline extends StatelessWidget {
@@ -84,24 +85,27 @@ class WTEWTimeline extends StatelessWidget {
                             activity.title,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontSize: 20,
+                            style: TextStyle(
+                              fontSize: context.width * 0.04,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                         FittedBox(
                           child: Text(
-                            activity.description,
-                            maxLines: 1,
+                            activity.instructor,
+                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w500),
+                            style: TextStyle(
+                              fontSize: context.width * 0.03,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
+                        const Spacer(),
                         FittedBox(
                           child: Text(
-                            "${activity.startDate} - ${activity.endDate}",
+                            activity.place,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(

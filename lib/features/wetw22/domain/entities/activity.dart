@@ -12,9 +12,10 @@ class Activity extends Equatable {
   final Note note;
   final String title;
   final String description;
-  final String dayDate;
-  final String startDate;
-  final String endDate;
+  final String date;
+  final String startTime;
+  final String endTime;
+  final String password;
 
   const Activity({
     required this.id,
@@ -25,9 +26,10 @@ class Activity extends Equatable {
     required this.note,
     required this.title,
     required this.description,
-    required this.dayDate,
-    required this.startDate,
-    required this.endDate,
+    required this.date,
+    required this.startTime,
+    required this.endTime,
+    required this.password,
   });
 
   @override
@@ -40,7 +42,8 @@ class Activity extends Equatable {
         note,
         title,
         description,
-        startDate,
-        endDate,
+        startTime,
+        endTime,
+        password,
       ];
 }

@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/features/wetw22/domain/entities/day.dart';
+import 'package:wtew22/config/utils/app_colors.dart';
+import 'package:wtew22/features/wetw22/domain/entities/sections.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/note/note_view.dart';
 import 'package:wtew22/features/wetw22/presentation/views/timeline/pages/timeline_view.dart';
 
-class DayView extends StatefulWidget {
-  const DayView({Key? key, required this.day}) : super(key: key);
+class SectionView extends StatefulWidget {
+  const SectionView({Key? key, required this.section}) : super(key: key);
 
-  final Day day;
+  final BaseSection section;
 
   @override
   // ignore: no_logic_in_create_state
-  State<DayView> createState() => _DayViewState(day: day);
+  State<SectionView> createState() => _SectionViewState(section: section);
 }
 
-class _DayViewState extends State<DayView> {
-  _DayViewState({required this.day});
+class _SectionViewState extends State<SectionView> {
+  _SectionViewState({required this.section});
 
   late final PageController pageController;
-  final Day day;
+  final BaseSection section;
   var currentIdx = 0;
 
   late List<Widget> pages;
@@ -28,8 +29,8 @@ class _DayViewState extends State<DayView> {
   void initState() {
     super.initState();
     pages = [
-      TimelineView(day: day),
-      NoteView(notes: day.notes),
+      TimelineView(section: section),
+      NoteView(notes: section.sectionNotes),
     ];
     pageController = PageController(initialPage: currentIdx);
   }
@@ -58,6 +59,7 @@ class _DayViewState extends State<DayView> {
       appBar: AppBar(
         title: Text(title),
       ),
+      backgroundColor: AppColors.accentColor,
       body: PageView(
         controller: pageController,
         children: pages,

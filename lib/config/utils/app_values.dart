@@ -8,4 +8,7 @@ class AppPadding {
 
 class AppMargin {}
 
-class AppSize {}
+class AppSize {
+  static const double horizontalPadding = 0.05;
+  static const double verticalPadding = 0.04;
+}

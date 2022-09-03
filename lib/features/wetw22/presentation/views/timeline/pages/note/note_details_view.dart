@@ -17,6 +17,7 @@ class NoteDetailsView extends StatelessWidget {
         body: ListView.builder(
           itemCount: note.description.length,
           itemBuilder: (context, index) => buildInfo(
+            context,
             note.description[index],
           ),
         ),
@@ -52,7 +53,7 @@ class NoteDetailsView extends StatelessWidget {
     );
   }
 
-  Widget buildInfo(String description) {
+  Widget buildInfo(BuildContext context, String description) {
     return Container(
       margin: const EdgeInsets.all(8),
       child: Column(
@@ -65,11 +66,17 @@ class NoteDetailsView extends StatelessWidget {
               children: [
                 TextSpan(
                   text: "• $description",
+                  style: const TextStyle(
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
           ),
-          buildDivider(315),
+          buildDivider(
+            MediaQuery.of(context).size.width -
+                description.length.toDouble() * 15,
+          ),
         ],
       ),
     );
