@@ -135,12 +135,12 @@ class AppConstants {
       Activity(
         id: "1",
         order: 1,
-        instructor: "Menna Magdy & Hana Samy",
+        instructor: "Hana Samy & Menna Magdy",
         place: sessionPlace,
         activityType: ActivityType.session,
         note: Note(
           id: "1",
-          title: "title",
+          title: "GSP vs SSP",
           description: ["Description"],
           imagePath: AppAssets.smuLogo,
         ),
@@ -174,7 +174,7 @@ class AppConstants {
       Activity(
         id: "3",
         order: 3,
-        instructor: "Aya Ali Kmal",
+        instructor: "Aya Ali",
         place: sessionPlace,
         activityType: ActivityType.session,
         note: Note(

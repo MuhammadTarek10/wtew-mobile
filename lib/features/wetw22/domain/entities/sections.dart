@@ -74,7 +74,7 @@ class SoftSkills extends BaseSection {
     required this.image,
     required this.notes,
   }) : super(
-          title: "Soft Skilss",
+          title: "Soft Skills",
           activities: softSkills,
           imagePath: image,
           sectionNotes: notes,
