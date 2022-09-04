@@ -13,7 +13,7 @@ class AppConstants {
   static const String sessionPlace = "K1 - Electrical Building";
 
   static const BaseSection subjects = Subjects(
-    image: "",
+    image: AppAssets.smuLogo,
     notes: [
       Note(
         id: "1",
@@ -122,7 +122,7 @@ class AppConstants {
   );
 
   static const BaseSection comparisons = Comparisons(
-    image: "",
+    image: AppAssets.smuLogo,
     notes: [
       Note(
         id: "1",
@@ -213,7 +213,7 @@ class AppConstants {
   );
 
   static const BaseSection softSkills = SoftSkills(
-    image: "",
+    image: AppAssets.smuLogo,
     notes: [
       Note(
         id: "1",
@@ -265,7 +265,7 @@ class AppConstants {
   );
 
   static BaseSection gpa = GPA(
-    image: "",
+    image: AppAssets.smuLogo,
     notes: const [
       Note(
         id: "1",
