@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/features/wetw22/domain/entities/activity.dart';
@@ -116,7 +115,12 @@ class WTEWTimeline extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    Center(child: Image.asset(AppAssets.smuLogoNoText)),
+                    Center(
+                        child: Image.asset(
+                      activity.activityIcon,
+                      fit: BoxFit.fill,
+                      scale: context.width * 0.05,
+                    )),
                   ],
                 ),
               ),

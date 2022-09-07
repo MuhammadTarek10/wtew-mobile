@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
@@ -37,7 +36,8 @@ class HomeView extends StatelessWidget {
       ),
       body: ListView.separated(
         itemCount: sections.length,
-        separatorBuilder: (context, index) => const Divider(),
+        separatorBuilder: (context, index) =>
+            Divider(height: context.height * 0.005),
         itemBuilder: (context, index) {
           final section = sections[index];
           return HomeSections2(
@@ -64,39 +64,30 @@ class HomeSections2 extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Stack(
-            children: [
-              Container(
-                height: context.height * 0.3,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      spreadRadius: 5,
-                      blurRadius: 10,
-                    )
-                  ],
-                  image: DecorationImage(
-                    image: AssetImage(section.imagePath),
-                    // colorFilter: ColorFilter.mode(
-                    //   Colors.black.withOpacity(0.4),
-                    //   BlendMode.srcATop,
-                    // ),
-                  ),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: context.height * 0.1,
+              vertical: context.height * 0.1,
+            ),
+            height: context.height * 0.3,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              boxShadow: const [
+                BoxShadow(
+                  color: AppColors.accentColor,
+                  spreadRadius: 1,
+                  blurRadius: 4,
+                )
+              ],
+              image: DecorationImage(
+                image: AssetImage(section.imagePath),
+                fit: BoxFit.fill,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.1),
+                  BlendMode.srcATop,
                 ),
               ),
-              Container(
-                height: context.height * 0.3,
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  section.title,
-                  style: Theme.of(context).textTheme.headline3!.copyWith(
-                        fontSize: context.height * 0.04,
-                        color: Colors.black.withOpacity(0.5),
-                      ),
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),

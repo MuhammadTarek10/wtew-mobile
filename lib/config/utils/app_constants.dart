@@ -13,12 +13,19 @@ class AppConstants {
   static const String sessionPlace = "K1 - Electrical Building";
 
   static const BaseSection subjects = Subjects(
-    image: AppAssets.smuLogo,
+    image: AppAssets.subjects,
     notes: [
       Note(
         id: "1",
         title: "Title",
-        description: [""],
+        description: [
+          "Note1",
+          "Note2",
+          "Note3",
+          "Note4",
+          "Very Looooooooooooooong Note",
+          "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+        ],
         imagePath: AppAssets.smuLogo,
       ),
     ],
@@ -32,11 +39,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Production Course",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.production,
         ),
+        activityIcon: AppAssets.productionIcon,
         title: "Production",
-        description: "Production Course",
+        description: "Production",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -50,12 +65,20 @@ class AppConstants {
         activityType: ActivityType.session,
         note: Note(
           id: "1",
-          title: "Math, Mechanics and Physics",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          title: "Math and Mechanics",
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.mathAndMechanics,
         ),
-        title: "Math, Mechanics and Physics",
-        description: "Math, Mechanics and Physics Courses",
+        activityIcon: AppAssets.mathAndMechanicsIcon,
+        title: "Math and Mechanics",
+        description: "Math and Mechanic",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -70,11 +93,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Engineering Drawing",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.drawing,
         ),
+        activityIcon: AppAssets.drawingIcon,
         title: "Engineering Drawing",
-        description: "Engineering Drawing Course",
+        description: "Engineering Drawing",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -89,11 +120,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Chemistry",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.chemistry,
         ),
+        activityIcon: AppAssets.chemistryIcon,
         title: "Chemistry",
-        description: "Chemistry Course",
+        description: "Chemistry",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -108,11 +147,46 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Humanities",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.humanities,
         ),
+        activityIcon: AppAssets.humanitiesIcon,
         title: "Humanities",
-        description: "Chemistry Courses",
+        description: "Humanities",
+        date: "dayDate",
+        startTime: "startDate",
+        endTime: "endDate",
+        password: "",
+      ),
+      Activity(
+        id: "6",
+        order: 6,
+        instructor: "Rowan Mahmoud",
+        place: sessionPlace,
+        activityType: ActivityType.session,
+        note: Note(
+          id: "1",
+          title: "Physics",
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.physics,
+        ),
+        activityIcon: AppAssets.physicsIcon,
+        title: "Physics",
+        description: "Physics",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -122,12 +196,19 @@ class AppConstants {
   );
 
   static const BaseSection comparisons = Comparisons(
-    image: AppAssets.smuLogo,
+    image: AppAssets.comparisons,
     notes: [
       Note(
         id: "1",
         title: "Title",
-        description: ["asdsad", "asdsadasd"],
+        description: [
+          "Note1",
+          "Note2",
+          "Note3",
+          "Note4a",
+          "Very Looooooooooooooong Note",
+          "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+        ],
         imagePath: AppAssets.smuLogo,
       ),
     ],
@@ -141,11 +222,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "GSP vs SSP",
-          description: ["Description"],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4a",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.gspVsSsp,
         ),
+        activityIcon: AppAssets.gspVsSspIcon,
         title: "GSP vs SSP",
-        description: "Difference Between GSP and SSP",
+        description: "Civil Work and Technical Teams",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -160,9 +249,17 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Computer vs Computer Science",
-          description: ["qwdqwd", "qwdqwdq"],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4a",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.computer,
         ),
+        activityIcon: AppAssets.computerIcon,
         title: "Computer vs Computer Science",
         description:
             "Difference Between Computer Engineering and Computer Science",
@@ -180,11 +277,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Civil Work and Technical Teams",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.civilVsTech,
         ),
+        activityIcon: AppAssets.civilAndTechnicalIcon,
         title: "Civil Work and Technical Teams",
-        description: "What are Civil Work and Technical Teams",
+        description: "Civil Work and Technical Teams",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -199,11 +304,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Architecture",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.archtecture,
         ),
+        activityIcon: AppAssets.archetictureIcon,
         title: "Architecture",
-        description: "Difference Between Architecture in Engneering and Others",
+        description: "Architecture",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -213,12 +326,19 @@ class AppConstants {
   );
 
   static const BaseSection softSkills = SoftSkills(
-    image: AppAssets.smuLogo,
+    image: AppAssets.softSkills,
     notes: [
       Note(
         id: "1",
         title: "Title",
-        description: [""],
+        description: [
+          "Note1",
+          "Note2",
+          "Note3",
+          "Note4",
+          "Very Looooooooooooooong Note",
+          "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+        ],
         imagePath: AppAssets.smuLogo,
       ),
     ],
@@ -232,11 +352,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Time Management",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.timeManagment,
         ),
+        activityIcon: AppAssets.timeManagementIcon,
         title: "Time Management",
-        description: "How To Manage Time",
+        description: "Time Management",
         date: "dayDate",
         startTime: "startDate",
         endTime: "endDate",
@@ -251,11 +379,19 @@ class AppConstants {
         note: Note(
           id: "1",
           title: "Self Learning",
-          description: [""],
-          imagePath: AppAssets.smuLogo,
+          description: [
+            "Note1",
+            "Note2",
+            "Note3",
+            "Note4",
+            "Very Looooooooooooooong Note",
+            "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+          ],
+          imagePath: AppAssets.selfLearning,
         ),
+        activityIcon: AppAssets.selcLearningIcon,
         title: "Self Learning",
-        description: "Self Learning process",
+        description: "Self Learning",
         date: "date",
         startTime: "startTime",
         endTime: "endTime",
@@ -265,12 +401,19 @@ class AppConstants {
   );
 
   static BaseSection gpa = GPA(
-    image: AppAssets.smuLogo,
+    image: AppAssets.gpa,
     notes: const [
       Note(
         id: "1",
         title: "Title",
-        description: [""],
+        description: [
+          "Note1",
+          "Note2",
+          "Note3",
+          "Note4",
+          "Very Looooooooooooooong Note",
+          "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+        ],
         imagePath: AppAssets.smuLogo,
       ),
     ],
@@ -283,11 +426,19 @@ class AppConstants {
       note: Note(
         id: "1",
         title: "GPA Credit Hour System",
-        description: [""],
-        imagePath: AppAssets.smuLogo,
+        description: [
+          "Note1",
+          "Note2",
+          "Note3",
+          "Note4",
+          "Very Looooooooooooooong Note",
+          "Another Very Loooooooooooooooooooooooooooooooooooooooooooooooooooooooong Note"
+        ],
+        imagePath: AppAssets.gpaS,
       ),
-      title: "GPA Credit Hour System",
-      description: "GPA, Credit Hour System",
+      activityIcon: AppAssets.gpaIcon,
+      title: "Credit Hour System",
+      description: "Credit Hour System",
       date: "dayDate",
       startTime: "startDate",
       endTime: "endDate",
@@ -297,7 +448,7 @@ class AppConstants {
 
   static const SMUThoughts smu = SMUThoughts(
     title: "Grande Finale",
-    description: "We're Here for you",
+    description: "",
     imagePath: AppAssets.smuLogo,
   );
 

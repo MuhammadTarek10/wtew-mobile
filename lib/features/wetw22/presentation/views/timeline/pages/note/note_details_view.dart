@@ -35,10 +35,17 @@ class NoteDetailsView extends StatelessWidget {
         centerTitle: true,
         title: Text(
           note.title,
+          style: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         background: Hero(
           tag: note.id,
-          child: Image.asset(note.imagePath),
+          child: Image.asset(
+            note.imagePath,
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );
@@ -74,8 +81,12 @@ class NoteDetailsView extends StatelessWidget {
             ),
           ),
           buildDivider(
-            MediaQuery.of(context).size.width -
-                description.length.toDouble() * 15,
+            (MediaQuery.of(context).size.width -
+                        description.length.toDouble() * 15) >
+                    0
+                ? (MediaQuery.of(context).size.width -
+                    description.length.toDouble() * 15)
+                : 100,
           ),
         ],
       ),

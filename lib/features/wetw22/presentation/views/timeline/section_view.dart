@@ -17,7 +17,6 @@ class SectionView extends StatefulWidget {
 class _SectionViewState extends State<SectionView> {
   _SectionViewState({required this.section});
 
-  late final PageController pageController;
   final BaseSection section;
   var currentIdx = 0;
 
@@ -32,52 +31,17 @@ class _SectionViewState extends State<SectionView> {
       TimelineView(section: section),
       NoteView(notes: section.sectionNotes),
     ];
-    pageController = PageController(initialPage: currentIdx);
-  }
-
-  @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
-
-  void onTap(int index) {
-    setState(() {
-      currentIdx = index;
-      title = titles[index];
-    });
-    pageController.animateToPage(
-      currentIdx,
-      duration: const Duration(milliseconds: 250),
-      curve: Curves.easeIn,
-    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      backgroundColor: AppColors.accentColor,
-      body: PageView(
-        controller: pageController,
-        children: pages,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            label: 'Timeline',
-            icon: Icon(Icons.calendar_today),
-          ),
-          BottomNavigationBarItem(
-            label: 'Notes',
-            icon: Icon(Icons.note),
-          ),
-        ],
-        currentIndex: currentIdx,
-        onTap: onTap,
-      ),
-    );
+        appBar: AppBar(
+          title: Text(title),
+        ),
+        backgroundColor: AppColors.accentColor,
+        body: TimelineView(
+          section: section,
+        ));
   }
 }
