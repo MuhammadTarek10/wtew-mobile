@@ -67,7 +67,7 @@ class NoteDetailsView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           RichText(
-            maxLines: 1,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
             text: TextSpan(
               children: [

@@ -10,14 +10,10 @@ class SectionView extends StatefulWidget {
   final BaseSection section;
 
   @override
-  // ignore: no_logic_in_create_state
-  State<SectionView> createState() => _SectionViewState(section: section);
+  State<SectionView> createState() => _SectionViewState();
 }
 
 class _SectionViewState extends State<SectionView> {
-  _SectionViewState({required this.section});
-
-  final BaseSection section;
   var currentIdx = 0;
 
   late List<Widget> pages;
@@ -28,20 +24,21 @@ class _SectionViewState extends State<SectionView> {
   void initState() {
     super.initState();
     pages = [
-      TimelineView(section: section),
-      NoteView(notes: section.sectionNotes),
+      TimelineView(section: widget.section),
+      NoteView(notes: widget.section.sectionNotes),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        backgroundColor: AppColors.accentColor,
-        body: TimelineView(
-          section: section,
-        ));
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      backgroundColor: AppColors.accentColor,
+      body: TimelineView(
+        section: widget.section,
+      ),
+    );
   }
 }

@@ -18,7 +18,7 @@ class AppAssets {
       'assets/sessions/Civil Work  _ Technical Teams.png';
   static const String computer = 'assets/sessions/Computer.png';
   static const String drawing = 'assets/sessions/drawing.png';
-  static const String gpaS = 'assets/sessions/GPA-.png';
+  static const String gpaS = 'assets/sessions/GPA.png';
   static const String gspVsSsp = 'assets/sessions/GSP Vs SSP.png';
   static const String humanities = 'assets/sessions/humanities.png';
   static const String production = 'assets/sessions/production.png';
