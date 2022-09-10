@@ -67,13 +67,14 @@ class NoteDetailsView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           RichText(
-            maxLines: 2,
+            maxLines: 3,
             overflow: TextOverflow.ellipsis,
             text: TextSpan(
               children: [
                 TextSpan(
                   text: "• $description",
                   style: const TextStyle(
+                    fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
                 ),
