@@ -7,4 +7,8 @@ class AppColors {
   static const Color accentColor = Colors.white;
   static const Color boldColor = Color(0xFF5800FF);
   static const Color appBackgroundColor = Colors.white;
+
+  // gpa calculator
+  static final Color semesterCardColor = Colors.blue.shade200;
+  static final Color cgpaButtonColor = Colors.blue.shade300;
 }

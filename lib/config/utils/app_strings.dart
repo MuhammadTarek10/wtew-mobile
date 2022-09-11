@@ -6,10 +6,18 @@ class AppStrings {
 
   // home view
   static const String homeViewTitle = "Home";
-  static const String welcomeMessage = "Welcome to Engineers' World '22";
+  static const String welcomeMessage = "WTEW '22";
   static const String goToSmuPage = "SMU Page";
   static const String cancel = "Cancel";
+  static const String gpaCalculator = "GPA Calculator";
+  static const String partners = "Partners";
+  static const String map = "Map";
+  static const String settings = "Settings";
 
   // timeline view
   static const String timelineViewTitle = "Timeline";
+
+  // gpa calculator
+  static const String semesters = "Semesters";
+  static const String cgpaButton = "Get CGPA";
 }

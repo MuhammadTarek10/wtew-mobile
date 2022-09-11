@@ -3,6 +3,10 @@ class AppAssets {
   static const String smuLogo = 'assets/images/smu_logo.png';
   static const String smuLogoNoText = 'assets/images/logo_no_text.png';
   static const String splash = 'assets/images/splash.png';
+  static const String settings = 'assets/images/settings.png';
+  static const String map = 'assets/images/map.png';
+  static const String partners = 'assets/images/partners.png';
+  static const String semester = 'assets/images/semester-blue.png';
 
   // sections
   static const String subjects = 'assets/sections/Subjects.png';

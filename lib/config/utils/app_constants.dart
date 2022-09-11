@@ -4,10 +4,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
-import 'package:wtew22/features/wetw22/domain/entities/activity.dart';
-import 'package:wtew22/features/wetw22/domain/entities/note.dart';
-import 'package:wtew22/features/wetw22/domain/entities/sections.dart';
-import 'package:wtew22/features/wetw22/domain/entities/smu_thought.dart';
+import 'package:wtew22/features/talks/domain/entities/activity.dart';
+import 'package:wtew22/features/talks/domain/entities/note.dart';
+import 'package:wtew22/features/talks/domain/entities/sections.dart';
+import 'package:wtew22/features/talks/domain/entities/smu_thought.dart';
 
 class AppConstants {
   static const String sessionPlace = "K1 - Electrical Building";
@@ -278,6 +278,7 @@ class AppConstants {
           id: "1",
           title: "Civil Work and Technical Teams",
           description: [
+            "Civil Work<T>",
             "Civil is nonprofit work aims to helping others.",
             "Concentrate on your soft skills.",
             "Call opens at the vacation of the first term (or before).",
@@ -286,6 +287,7 @@ class AppConstants {
             "Project and planning (PP): responsible for making sessions, presentations, and plans for new projects and events.",
             "Human resources (HC/HR): responsible for evaluating the staff’s work.",
             "Media marketing (MM): responsible for making posts and marketing campaigns for any project or event.",
+            "Technical Teams<T>",
             "Working on increasing your technical knowledge.",
             "Working on your hard skills.",
             "No targeted age or studying year to get in.",
