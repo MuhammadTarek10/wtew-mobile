@@ -20,4 +20,20 @@ class AppStrings {
   // gpa calculator
   static const String semesters = "Semesters";
   static const String cgpaButton = "Get CGPA";
+
+  // failures
+  static const String cacheFailureMessage = "Error in Saving, Try Again";
+
+  // database
+  static const int databaseVersion = 1;
+  static const String databaseName = "gpa-calculator";
+  static const String databaseSemesterTableName = "semesters";
+  static const String databaseColSemesterId = "id";
+  static const String databseColSemesterTerm = "semester_term";
+  static const String databaseColSemeterGPA = "semester_gpa";
+
+  static const String databaseSubjectTableName = "subjects";
+  static const String databaseColSubjectSemesterId = "semester_id";
+  static const String databaseColSubjectHours = "hours";
+  static const String databseColSubjectGrade = "grade";
 }

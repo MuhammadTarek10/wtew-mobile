@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wtew22/app/splash_view.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/views/semsters_view.dart';
+import 'package:wtew22/core/injector.dart';
+import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
+import 'package:wtew22/features/gpa_calculator/presentation/views/semesters_view.dart';
+import 'package:wtew22/features/gpa_calculator/presentation/views/subject_view.dart';
 import 'package:wtew22/features/talks/domain/entities/note.dart';
 import 'package:wtew22/features/talks/domain/entities/sections.dart';
 import 'package:wtew22/features/talks/presentation/views/home_view.dart';
@@ -16,7 +20,8 @@ class AppRoutes {
   static const String timelineNoteRoute = "/timeline/note";
   static const String noteRoute = "/note";
   static const String noteDetailRoute = "/note_detail";
-  static const String gpaCalculator = "/gpa-calculator";
+  static const String gpaCalculatorRoute = "/gpa-calculator";
+  static const String subjectRoute = "/gpa-subjects";
 }
 
 class AppRouteGenerator {
@@ -25,7 +30,7 @@ class AppRouteGenerator {
       case AppRoutes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
       case AppRoutes.homeRoute:
-        return MaterialPageRoute(builder: (_) => HomeView());
+        return MaterialPageRoute(builder: (_) => const HomeView());
       case AppRoutes.sectionRoute:
         return MaterialPageRoute(
             builder: (_) =>
@@ -40,8 +45,16 @@ class AppRouteGenerator {
       case AppRoutes.noteDetailRoute:
         return MaterialPageRoute(
             builder: (_) => NoteDetailsView(note: settings.arguments as Note));
-      case AppRoutes.gpaCalculator:
-        return MaterialPageRoute(builder: (_) => SemestersView());
+      case AppRoutes.gpaCalculatorRoute:
+        initGPA();
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => instance<GPACalculatorBloc>(),
+            child: const SemestersView(),
+          ),
+        );
+      case AppRoutes.subjectRoute:
+        return MaterialPageRoute(builder: (_) => const SubjectsView());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

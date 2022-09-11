@@ -1,9 +1,18 @@
 part of 'gpa_calculator_bloc.dart';
 
-abstract class GpaCalculatorState extends Equatable {
-  const GpaCalculatorState();  
+abstract class GPACalculatorState extends Equatable {
+  const GPACalculatorState();
 
   @override
   List<Object> get props => [];
 }
-class GpaCalculatorInitial extends GpaCalculatorState {}
+
+class SemestersInitialState extends GPACalculatorState {}
+
+class SemesterAddSuccessState extends GPACalculatorState {}
+
+class SemestersLoadedSuccessState extends GPACalculatorState {
+  final List<Semester> semesters;
+
+  const SemestersLoadedSuccessState({required this.semesters});
+}

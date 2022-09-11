@@ -16,16 +16,19 @@ enum Grades {
 }
 
 class Subject extends Equatable {
+  final String semesterId;
   final int hours;
   final Grades grade;
 
   const Subject({
+    required this.semesterId,
     required this.hours,
     required this.grade,
   });
 
   @override
   List<Object?> get props => [
+        semesterId,
         hours,
         grade,
       ];

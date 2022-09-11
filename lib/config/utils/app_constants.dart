@@ -4,6 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
+import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
+import 'package:wtew22/features/gpa_calculator/domain/entities/subject.dart';
 import 'package:wtew22/features/talks/domain/entities/activity.dart';
 import 'package:wtew22/features/talks/domain/entities/note.dart';
 import 'package:wtew22/features/talks/domain/entities/sections.dart';
@@ -458,6 +460,80 @@ class AppConstants {
       password: "",
     ),
   );
+
+  static List<Semester> semesters = const [
+    Semester(
+      id: "!2",
+      term: 1,
+      subjects: [
+        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
+        Subject(semesterId: "!2", hours: 3, grade: Grades.bMinus),
+        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
+      ],
+      gpa: 3.81,
+    ),
+    Semester(
+      id: "!2",
+      term: 2,
+      subjects: [
+        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
+        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
+        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
+      ],
+      gpa: 3.16,
+    ),
+    Semester(
+      id: "!2",
+      term: 3,
+      subjects: [
+        Subject(semesterId: "!2", hours: 1, grade: Grades.a),
+        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
+        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
+      ],
+      gpa: 2.26,
+    ),
+    Semester(
+      id: "!2",
+      term: 1,
+      subjects: [
+        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
+        Subject(semesterId: "!2", hours: 3, grade: Grades.bMinus),
+        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
+      ],
+      gpa: 2.24,
+    ),
+    Semester(
+      id: "!2",
+      term: 2,
+      subjects: [
+        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
+        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
+        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
+      ],
+      gpa: 2.56,
+    ),
+    Semester(
+      id: "!2",
+      term: 3,
+      subjects: [
+        Subject(semesterId: "!2", hours: 1, grade: Grades.a),
+        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
+        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
+      ],
+      gpa: 2.36,
+    ),
+    Semester(
+      id: "!2",
+      term: 1,
+      subjects: [
+        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
+        Subject(semesterId: "!2", hours: 3, grade: Grades.bMinus),
+        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
+      ],
+      gpa: 2.48,
+    ),
+  ];
+
 
   static const SMUThoughts smu = SMUThoughts(
     title: "Grande Finale",

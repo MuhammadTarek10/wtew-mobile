@@ -11,9 +11,14 @@ import 'package:wtew22/features/talks/presentation/widgets/drawer_item.dart';
 import 'package:wtew22/features/talks/presentation/widgets/section_card.dart';
 
 // ignore: must_be_immutable
-class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+class HomeView extends StatefulWidget {
+  const HomeView({Key? key}) : super(key: key);
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   List<BaseSection> sections = [
     AppConstants.subjects,
     AppConstants.comparisons,
@@ -56,7 +61,7 @@ class HomeView extends StatelessWidget {
               title: AppStrings.gpaCalculator,
               icon: AppAssets.gpaIcon,
               onTap: () =>
-                  Navigator.pushNamed(context, AppRoutes.gpaCalculator),
+                  Navigator.pushNamed(context, AppRoutes.gpaCalculatorRoute),
             ),
             DrawerItem(
               title: AppStrings.map,
