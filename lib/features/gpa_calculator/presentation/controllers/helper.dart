@@ -39,7 +39,7 @@ Grades getGrade(String grade) {
     case "A":
       return Grades.a;
     case "A-":
-      return Grades.aPlus;
+      return Grades.aMinus;
     case "B+":
       return Grades.bPlus;
     case "B":
