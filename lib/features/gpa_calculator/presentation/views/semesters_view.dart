@@ -85,9 +85,7 @@ class _SemestersViewState extends State<SemestersView> {
                   ),
                 );
               } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return Container();
               }
             },
           ),

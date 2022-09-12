@@ -65,7 +65,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/logo_no_text.png"
+  image_path: "assets/images/icon.png"
   min_sdk_android: 21
 
 # For information on the generic Dart part of this file, see the
@@ -79,6 +79,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/icon.png
     - assets/images/
     - assets/timeline_icons/
     - assets/sessions/
