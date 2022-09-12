@@ -23,17 +23,10 @@ class AppStrings {
 
   // failures
   static const String cacheFailureMessage = "Error in Saving, Try Again";
+  static const String invalidInputs = "Invalid Inputs";
 
-  // database
-  static const int databaseVersion = 1;
-  static const String databaseName = "gpa-calculator";
-  static const String databaseSemesterTableName = "semesters";
-  static const String databaseColSemesterId = "id";
-  static const String databseColSemesterTerm = "semester_term";
-  static const String databaseColSemeterGPA = "semester_gpa";
-
-  static const String databaseSubjectTableName = "subjects";
-  static const String databaseColSubjectSemesterId = "semester_id";
-  static const String databaseColSubjectHours = "hours";
-  static const String databseColSubjectGrade = "grade";
+  // hints
+  static const String subjectNameHint = "Course";
+  static const String hoursHint = "Hours";
+  static const String gradeHint = "Grade";
 }

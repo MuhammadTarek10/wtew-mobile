@@ -17,12 +17,8 @@ class SemesterCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final totalCredits = semester.subjects
-        .map((subject) => subject.hours)
-        .reduce((value, element) => (value + element));
-
     return InkWell(
-      onTap: () => controller.editSemester(semester),
+      onLongPress: () => controller.editSemester(semester),
       child: Dismissible(
         key: Key(semester.toString()),
         onDismissed: (direction) => controller.deleteSemester(semester),
@@ -45,7 +41,7 @@ class SemesterCard extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: context.height * 0.01),
                     child: Text(
-                      "Semester: ${semester.term}",
+                      "Semester: ${semester.id}",
                       style: TextStyle(
                         fontSize: context.height * 0.02,
                         fontWeight: FontWeight.bold,
@@ -53,7 +49,7 @@ class SemesterCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Credits: $totalCredits",
+                    "Credits: ${semester.credits}",
                     style: TextStyle(
                       fontSize: context.height * 0.018,
                     ),
@@ -75,7 +71,7 @@ class SemesterCard extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    semester.gpa.toString(),
+                    semester.gpa.toStringAsFixed(2),
                     style: TextStyle(
                       fontSize: context.height * 0.018,
                       fontWeight: FontWeight.bold,

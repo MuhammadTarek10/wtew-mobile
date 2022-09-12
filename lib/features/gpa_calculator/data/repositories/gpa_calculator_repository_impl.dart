@@ -1,7 +1,7 @@
-import 'package:wtew22/features/gpa_calculator/data/datasources/local_data_source.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
-import 'package:wtew22/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
+import 'package:wtew22/core/error/failures.dart';
+import 'package:wtew22/features/gpa_calculator/data/datasources/local_data_source.dart';
+import 'package:wtew22/features/gpa_calculator/data/models/semester.dart';
 import 'package:wtew22/features/gpa_calculator/domain/repositories/gpa_calculator_repository.dart';
 
 class GPACalculatorRepositoryImpl implements GPACalculatorRepository {
@@ -10,7 +10,7 @@ class GPACalculatorRepositoryImpl implements GPACalculatorRepository {
   const GPACalculatorRepositoryImpl({required this.localDataSource});
 
   @override
-  Future<Either<Failure, Unit>> addSemester(Semester semester) async {
+  Future<Either<Failure, Unit>> addSemester(SemesterModel semester) async {
     try {
       await localDataSource.addSemester(semester);
       return const Right(unit);
@@ -20,7 +20,7 @@ class GPACalculatorRepositoryImpl implements GPACalculatorRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> deleteSemester(Semester semester) async {
+  Future<Either<Failure, Unit>> deleteSemester(SemesterModel semester) async {
     try {
       await localDataSource.deleteSemester(semester);
       return const Right(unit);
@@ -30,7 +30,7 @@ class GPACalculatorRepositoryImpl implements GPACalculatorRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> editSemester(Semester semester) async {
+  Future<Either<Failure, Unit>> editSemester(SemesterModel semester) async {
     try {
       await localDataSource.editSemester(semester);
       return const Right(unit);
@@ -40,7 +40,7 @@ class GPACalculatorRepositoryImpl implements GPACalculatorRepository {
   }
 
   @override
-  Future<Either<Failure, List<Semester>>> getSemesters() async {
+  Future<Either<Failure, List<SemesterModel>>> getSemesters() async {
     try {
       final semesters = await localDataSource.getSemesters();
       return Right(semesters);

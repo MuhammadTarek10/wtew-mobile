@@ -4,14 +4,16 @@ import 'package:wtew22/features/gpa_calculator/domain/entities/subject.dart';
 class Semester extends Equatable {
   final String id;
   final int term;
-  final List<Subject> subjects;
+  final List<Subject>? subjects;
   final double gpa;
+  final int credits;
 
   const Semester({
     required this.id,
     required this.term,
-    required this.subjects,
+    this.subjects,
     required this.gpa,
+    required this.credits,
   });
 
   @override
@@ -20,5 +22,6 @@ class Semester extends Equatable {
         term,
         subjects,
         gpa,
+        credits,
       ];
 }

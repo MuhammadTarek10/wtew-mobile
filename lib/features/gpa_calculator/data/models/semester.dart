@@ -4,25 +4,30 @@ class SemesterModel extends Semester {
   const SemesterModel({
     required super.id,
     required super.term,
-    required super.subjects,
+    super.subjects,
     required super.gpa,
+    required super.credits,
   });
 
   factory SemesterModel.fromJson(Map<String, dynamic> json) {
     return SemesterModel(
       id: json['id'],
-      term: json['order'],
-      subjects: json['subjects'],
+      term: json['term'],
       gpa: json['gpa'],
+      credits: json['credits'],
     );
+  }
+
+  static List<SemesterModel> fromJsonList(List<dynamic> jsonList) {
+    return jsonList.map((json) => SemesterModel.fromJson(json)).toList();
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'order': term,
-      'subjects': subjects,
+      'term': term,
       'gpa': gpa,
+      'credits': credits,
     };
   }
 }

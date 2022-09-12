@@ -21,6 +21,7 @@ class AppTheme {
           TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
         },
       ),
+      scaffoldBackgroundColor: AppColors.accentColor,
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wtew22/app/splash_view.dart';
 import 'package:wtew22/core/injector.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
+import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/views/semesters_view.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/views/subject_view.dart';
 import 'package:wtew22/features/talks/domain/entities/note.dart';
@@ -54,7 +55,11 @@ class AppRouteGenerator {
           ),
         );
       case AppRoutes.subjectRoute:
-        return MaterialPageRoute(builder: (_) => const SubjectsView());
+        return MaterialPageRoute(
+          builder: (_) => SubjectsView(
+            controller: instance<GPACalculatorController>(),
+          ),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

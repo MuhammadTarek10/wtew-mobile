@@ -1,31 +1,34 @@
 import 'package:get_it/get_it.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
+import 'package:wtew22/config/utils/app_constants.dart';
 import 'package:wtew22/features/gpa_calculator/data/datasources/local_data_source.dart';
 import 'package:wtew22/features/gpa_calculator/data/repositories/gpa_calculator_repository_impl.dart';
 import 'package:wtew22/features/gpa_calculator/domain/usecases/usecases.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
+import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
 
 final instance = GetIt.instance;
 
 Future<dynamic> _createDatabase(Database db, int version) async {
   await db.execute(
     '''
-  CREATE TABLE IF NOT EXISTS "${AppStrings.databaseSemesterTableName}" (
-    ${AppStrings.databaseColSemesterId} TEXT PRIMARY KEY,
-    ${AppStrings.databseColSemesterTerm} INTEGER NOT NULL,
-    ${AppStrings.databaseColSemeterGPA} DOUBLE NOT NULL
+  CREATE TABLE IF NOT EXISTS "${AppConstants.databaseSemesterTableName}" (
+    ${AppConstants.databaseColSemesterId} TEXT PRIMARY KEY,
+    ${AppConstants.databseColSemesterTerm} INTEGER NOT NULL,
+    ${AppConstants.databaseColSemeterGPA} DOUBLE NOT NULL,
+    ${AppConstants.databaseColSemesterCredits} int NOT NULL
   )
   ''',
   );
 
   await db.execute(
     '''
-    CREATE TABLE IF NOT EXISTS "${AppStrings.databaseSubjectTableName}" (
-      ${AppStrings.databaseColSubjectHours} INTEGER NOT NULL,
-      ${AppStrings.databaseColSemeterGPA} DOUBLE NOT NULL,
-      ${AppStrings.databaseColSubjectSemesterId} TEXT NOT NULL,
-      FOREIGN KEY (${AppStrings.databaseColSubjectSemesterId}) REFERENCES ${AppStrings.databaseSemesterTableName} (${AppStrings.databaseColSemesterId})
+    CREATE TABLE IF NOT EXISTS "${AppConstants.databaseSubjectTableName}" (
+      ${AppConstants.databaseColSubjectName} TEXT NOT NULL,
+      ${AppConstants.databaseColSubjectHours} INTEGER NOT NULL,
+      ${AppConstants.databseColSubjectGrade} TEXT NOT NULL,
+      ${AppConstants.databaseColSubjectSemesterId} TEXT NOT NULL,
+      FOREIGN KEY (${AppConstants.databaseColSubjectSemesterId}) REFERENCES ${AppConstants.databaseSemesterTableName} (${AppConstants.databaseColSemesterId})
     )
     ''',
   );
@@ -37,10 +40,10 @@ Future<dynamic> _onConfigure(Database db) async {
 
 Future<void> initApp() async {
   Database database = await openDatabase(
-    '${await getDatabasesPath()}/${AppStrings.databaseName}',
+    '${await getDatabasesPath()}/${AppConstants.databaseName}',
     onCreate: _createDatabase,
     onConfigure: _onConfigure,
-    version: AppStrings.databaseVersion,
+    version: AppConstants.databaseVersion,
   );
 
   instance.registerLazySingleton<Database>(() => database);
@@ -99,6 +102,14 @@ void initGPA() {
         editSemesterUseCase: instance<EditSemesterUseCase>(),
         deleteSemesterUseCase: instance<DeleteSemesterUseCase>(),
         getSemestersUseCase: instance<GetSemestersUseCase>(),
+      ),
+    );
+  }
+
+  if (!GetIt.I.isRegistered<GPACalculatorController>()) {
+    instance.registerFactory<GPACalculatorController>(
+      () => GPACalculatorController(
+        bloc: instance<GPACalculatorBloc>(),
       ),
     );
   }

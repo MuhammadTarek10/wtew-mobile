@@ -1,0 +1,13 @@
+InkWell(
+        onTap: () => subjectInputsController
+            .add(SubjectInputData()),
+        child: Container(
+            decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(
+                context.width * 0.02),
+            ),
+            child:
+                const Center(child: Icon(Icons.add)),
+        ),
+),

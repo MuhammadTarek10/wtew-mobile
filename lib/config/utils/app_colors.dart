@@ -7,6 +7,7 @@ class AppColors {
   static const Color accentColor = Colors.white;
   static const Color boldColor = Color(0xFF5800FF);
   static const Color appBackgroundColor = Colors.white;
+  static const Color hint = Colors.grey;
 
   // gpa calculator
   static const Color floatingButtonColor = Colors.blue;

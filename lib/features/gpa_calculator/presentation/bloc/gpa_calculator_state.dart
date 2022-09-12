@@ -9,10 +9,20 @@ abstract class GPACalculatorState extends Equatable {
 
 class SemestersInitialState extends GPACalculatorState {}
 
-class SemesterAddSuccessState extends GPACalculatorState {}
+class SemestersLoadingState extends GPACalculatorState {}
+
+class SemesterDeletedSuccessState extends GPACalculatorState {}
+
+class SemesterFailureState extends GPACalculatorState {
+  final String message;
+
+  const SemesterFailureState({required this.message});
+}
 
 class SemestersLoadedSuccessState extends GPACalculatorState {
   final List<Semester> semesters;
 
   const SemestersLoadedSuccessState({required this.semesters});
 }
+
+class SemesterAddedSuccessState extends GPACalculatorState {}
