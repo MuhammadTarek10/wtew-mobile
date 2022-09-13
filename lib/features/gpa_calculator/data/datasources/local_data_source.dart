@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:wtew22/config/utils/app_constants.dart';

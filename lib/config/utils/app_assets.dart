@@ -6,8 +6,8 @@ class AppAssets {
   static const String settings = 'assets/images/settings.png';
   static const String map = 'assets/images/map.png';
   static const String partners = 'assets/images/partners.png';
-  static const String semester = 'assets/images/semester-blue.png';
-  static const String subject = 'assets/images/course.png';
+  static const String semester = 'assets/images/semester.png';
+  static const String subject = 'assets/images/book.png';
 
   // sections
   static const String subjects = 'assets/sections/Subjects.png';

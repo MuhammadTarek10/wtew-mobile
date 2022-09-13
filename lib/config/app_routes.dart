@@ -8,7 +8,7 @@ import 'package:wtew22/features/gpa_calculator/presentation/views/semesters_view
 import 'package:wtew22/features/gpa_calculator/presentation/views/subject_view.dart';
 import 'package:wtew22/features/talks/domain/entities/note.dart';
 import 'package:wtew22/features/talks/domain/entities/sections.dart';
-import 'package:wtew22/features/talks/presentation/views/home_view.dart';
+import 'package:wtew22/features/home_view.dart';
 import 'package:wtew22/features/talks/presentation/views/timeline/pages/note/note_details_view.dart';
 import 'package:wtew22/features/talks/presentation/views/timeline/pages/note/note_view.dart';
 import 'package:wtew22/features/talks/presentation/views/timeline/section_view.dart';

@@ -21,6 +21,10 @@ class AppStrings {
   static const String semesters = "Semesters";
   static const String cgpaButton = "Get CGPA";
 
+  // subjects view
+  static const String addSemester = "Add Semester";
+  static const String addSubject = "Add Subject";
+
   // failures
   static const String cacheFailureMessage = "Error in Saving, Try Again";
   static const String invalidInputs = "Invalid Inputs";

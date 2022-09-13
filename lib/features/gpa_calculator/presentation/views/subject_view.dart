@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
+import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_constants.dart';
 import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
@@ -86,13 +87,13 @@ class _SubjectsViewState extends State<SubjectsView> {
                       width: context.width * 0.35,
                       height: context.height * 0.1,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: AppColors.secondaryColor,
                         borderRadius:
                             BorderRadius.circular(context.width * 0.05),
                       ),
                       child: Center(
                         child: Text(
-                          "Add Semester",
+                          AppStrings.addSemester,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: context.width * 0.04,
@@ -116,13 +117,13 @@ class _SubjectsViewState extends State<SubjectsView> {
                       width: context.width * 0.35,
                       height: context.height * 0.1,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: AppColors.secondaryColor,
                         borderRadius:
                             BorderRadius.circular(context.width * 0.05),
                       ),
                       child: Center(
                         child: Text(
-                          "Add Subject",
+                          AppStrings.addSubject,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: context.width * 0.04,

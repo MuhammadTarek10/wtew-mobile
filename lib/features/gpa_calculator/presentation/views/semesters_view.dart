@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wtew22/config/app_routes.dart';
@@ -56,7 +54,6 @@ class _SemestersViewState extends State<SemestersView> {
                 ),
           body: BlocConsumer<GPACalculatorBloc, GPACalculatorState>(
             listener: (context, state) {
-              log(state.toString());
               if (state is SemesterDeletedSuccessState) {
                 controller.getSemesters();
               }
