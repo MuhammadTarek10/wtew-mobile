@@ -30,7 +30,7 @@ class AppStrings {
   static const String invalidInputs = "Invalid Inputs";
 
   // hints
-  static const String subjectNameHint = "Course";
+  static const String subjectNameHint = "Course (Optional)";
   static const String hoursHint = "Hours";
   static const String gradeHint = "Grade";
 }

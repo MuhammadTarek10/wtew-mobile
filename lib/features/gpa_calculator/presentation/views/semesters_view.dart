@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
+import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/controllers/helper.dart';
@@ -17,6 +20,8 @@ class SemestersView extends StatefulWidget {
 
 class _SemestersViewState extends State<SemestersView> {
   late GPACalculatorController controller;
+  late StreamController<List<Semester>> semesterController;
+  late StreamController<String> titleStreamController;
 
   @override
   void initState() {
@@ -24,51 +29,68 @@ class _SemestersViewState extends State<SemestersView> {
     controller = GPACalculatorController(
       bloc: context.read<GPACalculatorBloc>(),
     );
+    semesterController = StreamController<List<Semester>>();
+    titleStreamController = StreamController<String>();
     controller.getSemesters();
   }
 
   @override
   void dispose() {
     controller.dispose();
+    semesterController.close();
+    titleStreamController.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GPACalculatorBloc, GPACalculatorState>(
+    return BlocConsumer<GPACalculatorBloc, GPACalculatorState>(
+      listener: (context, state) {
+        if (state is SemesterDeletedSuccessState) {
+          controller.getSemesters();
+        } else if (state is SemestersLoadedSuccessState &&
+            state.semesters.isNotEmpty) {
+          titleStreamController
+              .add("${AppStrings.cgpa}: ${getCGPA(state.semesters)}");
+          semesterController.add(state.semesters);
+        } else if (state is SemestersLoadedSuccessState &&
+            state.semesters.isEmpty) {
+          titleStreamController.add(AppStrings.semesters);
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
             elevation: 0,
-            title: (state is SemestersLoadedSuccessState &&
-                    state.semesters.isNotEmpty)
-                ? Text("${AppStrings.cgpa}: ${getCGPA(state.semesters)}")
-                : const Text(AppStrings.semesters),
+            title: StreamBuilder<String>(
+              stream: titleStreamController.stream,
+              builder: (context, snaphot) {
+                if (snaphot.hasData) {
+                  return Text(snaphot.data!);
+                } else {
+                  return const Text(AppStrings.semesters);
+                }
+              },
+            ),
           ),
-          body: BlocConsumer<GPACalculatorBloc, GPACalculatorState>(
-            listener: (context, state) {
-              if (state is SemesterDeletedSuccessState) {
-                controller.getSemesters();
-              }
-            },
-            builder: (context, state) {
-              if (state is SemestersLoadedSuccessState) {
-                return SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: state.semesters.length,
-                        itemBuilder: (context, index) {
-                          return SemesterCard(
-                            controller: controller,
-                            semester: state.semesters[index],
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+          body: StreamBuilder<List<Semester>>(
+            stream: semesterController.stream,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    final semester = snapshot.data!.elementAt(index);
+                    return SemesterCard(
+                      controller: controller,
+                      semester: semester,
+                      onDismissed: () {
+                        snapshot.data!.remove(semester);
+                        controller.deleteSemester(semester);
+                      },
+                    );
+                  },
                 );
               } else {
                 return Container();

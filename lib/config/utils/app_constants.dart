@@ -234,7 +234,7 @@ class AppConstants {
       Activity(
         id: "1",
         order: 1,
-        instructor: "Hana Samy & Menna Magdy",
+        instructor: "Menna Magdy",
         place: sessionPlace,
         activityType: ActivityType.session,
         note: Note(

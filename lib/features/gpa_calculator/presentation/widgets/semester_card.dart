@@ -10,18 +10,19 @@ class SemesterCard extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.semester,
+    required this.onDismissed,
   }) : super(key: key);
 
   final GPACalculatorController controller;
   final Semester semester;
+  final VoidCallback onDismissed;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onLongPress: () => controller.editSemester(semester),
       child: Dismissible(
-        key: Key(semester.toString()),
-        onDismissed: (direction) => controller.deleteSemester(semester),
+        key: UniqueKey(),
+        onDismissed: (direction) => onDismissed(),
         child: Container(
           width: double.infinity,
           height: context.height * 0.12,

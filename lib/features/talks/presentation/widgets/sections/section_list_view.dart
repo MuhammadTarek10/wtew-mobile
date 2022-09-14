@@ -21,9 +21,7 @@ class SecionListView extends StatelessWidget {
       itemBuilder: (context, index) {
         final section = sections[index];
         return SectionAnimatedScrollView(
-          child: SectionCard(
-            section: section,
-          ),
+          child: SectionCard(section: section),
         );
       },
     );
