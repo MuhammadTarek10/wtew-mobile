@@ -66,25 +66,24 @@ Grades getGrade(String grade) {
 double getPointValue(Grades grade) {
   switch (grade) {
     case Grades.aPlus:
-      return 4;
     case Grades.a:
       return 4;
     case Grades.aMinus:
-      return 3.67;
+      return 3.7;
     case Grades.bPlus:
-      return 3.33;
+      return 3.3;
     case Grades.b:
       return 3;
     case Grades.bMinus:
-      return 2.67;
+      return 2.7;
     case Grades.cPlus:
-      return 2.33;
+      return 2.3;
     case Grades.c:
       return 2;
     case Grades.cMinus:
-      return 1.67;
+      return 1.7;
     case Grades.dPlus:
-      return 1.33;
+      return 1.3;
     case Grades.d:
       return 1;
     case Grades.f:

@@ -3,11 +3,11 @@ import 'package:wtew22/config/app_routes.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_constants.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
-import 'package:wtew22/features/drawer_header.dart';
-import 'package:wtew22/features/drawer_item.dart';
 import 'package:wtew22/features/talks/domain/entities/sections.dart';
 import 'package:wtew22/features/talks/presentation/widgets/section_card.dart';
 import 'package:wtew22/features/talks/presentation/widgets/sections/section_list_view.dart';
+import 'package:wtew22/features/widgets/drawer_header.dart';
+import 'package:wtew22/features/widgets/drawer_item.dart';
 
 // ignore: must_be_immutable
 class HomeView extends StatefulWidget {
@@ -49,21 +49,21 @@ class _HomeViewState extends State<HomeView> {
             onTap: () =>
                 Navigator.pushNamed(context, AppRoutes.gpaCalculatorRoute),
           ),
-          DrawerItem(
-            title: AppStrings.map,
-            icon: AppAssets.map,
-            onTap: () {},
-          ),
-          DrawerItem(
-            title: AppStrings.partners,
-            icon: AppAssets.partners,
-            onTap: () {},
-          ),
-          DrawerItem(
-            title: AppStrings.settings,
-            icon: AppAssets.settings,
-            onTap: () {},
-          ),
+          // DrawerItem(
+          //   title: AppStrings.map,
+          //   icon: AppAssets.map,
+          //   onTap: () {},
+          // ),
+          // DrawerItem(
+          //   title: AppStrings.partners,
+          //   icon: AppAssets.partners,
+          //   onTap: () {},
+          // ),
+          // DrawerItem(
+          //   title: AppStrings.settings,
+          //   icon: AppAssets.settings,
+          //   onTap: () {},
+          // ),
         ],
       ),
     );

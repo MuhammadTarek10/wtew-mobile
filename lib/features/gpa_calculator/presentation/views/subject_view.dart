@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
-import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_constants.dart';
 import 'package:wtew22/config/utils/app_media_query.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
@@ -38,105 +37,96 @@ class _SubjectsViewState extends State<SubjectsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        body: SingleChildScrollView(
-          physics: const ScrollPhysics(),
-          child: Column(
-            children: [
-              Center(
-                child: SizedBox(
-                  height: context.height * 0.25,
-                  child: Image.asset(AppAssets.subject),
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        physics: const ScrollPhysics(),
+        child: Column(
+          children: [
+            Center(
+              child: SizedBox(
+                height: context.height * 0.25,
+                child: Image.asset(AppAssets.subject),
+              ),
+            ),
+            ListView.builder(
+              itemCount: subjects!.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.only(top: context.height * 0.02),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SubjectInputsWidget(data: data[index]),
+                      SizedBox(width: context.width * 0.02),
+                    ],
+                  ),
+                );
+              },
+            ),
+            SizedBox(height: context.height * 0.1),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                buildButton(
+                  context: context,
+                  onTap: () async {
+                    if (await widget.controller.isSemesterRight(data)) {
+                      widget.controller.addSemester();
+                      Navigator.pop(context);
+                    } else {
+                      AppConstants.showToast(message: AppStrings.invalidInputs);
+                    }
+                  },
+                  title: AppStrings.addSemester,
                 ),
-              ),
-              ListView.builder(
-                itemCount: subjects!.length,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(top: context.height * 0.02),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SubjectInputsWidget(data: data[index]),
-                        SizedBox(width: context.width * 0.02),
-                      ],
-                    ),
-                  );
-                },
-              ),
-              SizedBox(height: context.height * 0.1),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  InkWell(
-                    onTap: () async {
-                      if (await widget.controller.isSemesterRight(data)) {
-                        widget.controller.addSemester();
-                        Navigator.pop(context);
-                      } else {
-                        AppConstants.showToast(
-                            message: AppStrings.invalidInputs);
-                      }
-                    },
-                    child: Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: context.width * 0.04,
-                      ),
-                      width: context.width * 0.35,
-                      height: context.height * 0.1,
-                      decoration: BoxDecoration(
-                        color: AppColors.secondaryColor,
-                        borderRadius:
-                            BorderRadius.circular(context.width * 0.05),
-                      ),
-                      child: Center(
-                        child: Text(
-                          AppStrings.addSemester,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: context.width * 0.04,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-                        data.add(SubjectInputData());
-                        subjects!
-                            .add(SubjectInputsWidget(data: data[counter++]));
-                      });
-                    },
-                    child: Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: context.width * 0.04,
-                      ),
-                      width: context.width * 0.35,
-                      height: context.height * 0.1,
-                      decoration: BoxDecoration(
-                        color: AppColors.secondaryColor,
-                        borderRadius:
-                            BorderRadius.circular(context.width * 0.05),
-                      ),
-                      child: Center(
-                        child: Text(
-                          AppStrings.addSubject,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: context.width * 0.04,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: context.height * 0.04),
-            ],
+                buildButton(
+                  context: context,
+                  onTap: () {
+                    setState(() {
+                      data.add(SubjectInputData());
+                      subjects!.add(SubjectInputsWidget(data: data[counter++]));
+                    });
+                  },
+                  title: AppStrings.addSubject,
+                ),
+              ],
+            ),
+            SizedBox(height: context.height * 0.04),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildButton({
+    required BuildContext context,
+    required VoidCallback onTap,
+    required String title,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.only(
+          left: context.width * 0.04,
+          right: context.width * 0.04,
+        ),
+        width: context.width * 0.35,
+        height: context.height * 0.05,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(context.width * 0.05),
+          border: Border.all(color: Colors.black),
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: TextStyle(
+              fontSize: context.width * 0.04,
+            ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

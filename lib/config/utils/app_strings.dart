@@ -19,7 +19,7 @@ class AppStrings {
 
   // gpa calculator
   static const String semesters = "Semesters";
-  static const String cgpaButton = "Get CGPA";
+  static const String cgpa = "CGPA";
 
   // subjects view
   static const String addSemester = "Add Semester";
