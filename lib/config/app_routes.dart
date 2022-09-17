@@ -50,7 +50,8 @@ class AppRouteGenerator {
         initGPA();
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => instance<GPACalculatorBloc>(),
+            create: (context) =>
+                instance<GPACalculatorBloc>()..add(GetSemestersEvent()),
             child: const SemestersView(),
           ),
         );

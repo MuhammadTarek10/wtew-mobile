@@ -19,10 +19,10 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   List<BaseSection> sections = [
-    AppConstants.subjects,
-    AppConstants.comparisons,
-    AppConstants.softSkills,
-    AppConstants.gpa,
+    TalksData.subjects,
+    TalksData.comparisons,
+    TalksData.softSkills,
+    TalksData.gpa,
   ];
 
   @override

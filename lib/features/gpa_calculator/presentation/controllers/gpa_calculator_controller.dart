@@ -49,7 +49,7 @@ class GPACalculatorController {
     bloc.add(GetSemestersEvent());
   }
 
-  void dispose() {
+  void close() {
     bloc.close();
   }
 }

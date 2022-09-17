@@ -5,16 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
 import 'package:wtew22/config/utils/app_colors.dart';
 import 'package:wtew22/config/utils/app_strings.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/subject.dart';
 import 'package:wtew22/features/talks/domain/entities/activity.dart';
 import 'package:wtew22/features/talks/domain/entities/note.dart';
 import 'package:wtew22/features/talks/domain/entities/sections.dart';
 import 'package:wtew22/features/talks/domain/entities/smu_thought.dart';
 
 class AppConstants {
-  static const String sessionPlace = "K1 - Electrical Building";
-
   // database
   static const int databaseVersion = 1;
   static const String databaseName = "gpa-calculator";
@@ -29,6 +25,69 @@ class AppConstants {
   static const String databaseColSubjectName = "name";
   static const String databaseColSubjectHours = "hours";
   static const String databseColSubjectGrade = "grade";
+
+  static const SMUThoughts smu = SMUThoughts(
+    title: "Grande Finale",
+    description: "",
+    imagePath: AppAssets.smuLogo,
+  );
+
+  static Widget buildHelpButton(BuildContext context) {
+    return IconButton(
+      onPressed: () => AwesomeDialog(
+        context: context,
+        animType: AnimType.SCALE,
+        customHeader: Image.asset(AppAssets.smuLogoNoText),
+        title: AppStrings.welcomeMessage,
+        desc: AppStrings.eventDiscription,
+        btnOkText: AppStrings.goToSmuPage,
+        btnOkOnPress: () async => await launchUrl(
+          Uri.parse(AppStrings.smuPage),
+        ),
+        btnOkColor: AppColors.primaryColor,
+        btnCancelText: AppStrings.cancel,
+        btnCancelOnPress: () {},
+      ).show(),
+      icon: const Icon(
+        Icons.help,
+        color: Colors.black,
+      ),
+    );
+  }
+
+  static Future<dynamic> help(BuildContext context) {
+    return AwesomeDialog(
+      context: context,
+      animType: AnimType.SCALE,
+      customHeader: Image.asset(AppAssets.smuLogoNoText),
+      title: AppStrings.welcomeMessage,
+      desc: AppStrings.eventDiscription,
+      btnOkText: AppStrings.goToSmuPage,
+      btnOkOnPress: () async => await launchUrl(
+        Uri.parse(AppStrings.smuPage),
+      ),
+      btnOkColor: AppColors.primaryColor,
+      btnCancelText: AppStrings.cancel,
+      btnCancelOnPress: () {},
+    ).show();
+  }
+
+  static void showToast({
+    required String message,
+    Color? color,
+    ToastGravity? gravity,
+  }) {
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      backgroundColor: color ?? AppColors.hint,
+      gravity: gravity ?? ToastGravity.BOTTOM,
+    );
+  }
+}
+
+class TalksData {
+  static const String sessionPlace = "K1 - Electrical Building";
 
   static const BaseSection subjects = Subjects(
     image: AppAssets.subjects,
@@ -512,143 +571,4 @@ class AppConstants {
       password: "",
     ),
   );
-
-  static List<Semester> semesters = const [
-    Semester(
-      id: "!2",
-      term: 1,
-      credits: 8,
-      subjects: [
-        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
-        Subject(semesterId: "!2", hours: 3, grade: Grades.bMinus),
-        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
-      ],
-      gpa: 3.81,
-    ),
-    Semester(
-      id: "!2",
-      term: 2,
-      credits: 8,
-      subjects: [
-        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
-        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
-        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
-      ],
-      gpa: 3.16,
-    ),
-    Semester(
-      id: "!2",
-      term: 3,
-      credits: 8,
-      subjects: [
-        Subject(semesterId: "!2", hours: 1, grade: Grades.a),
-        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
-        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
-      ],
-      gpa: 2.26,
-    ),
-    Semester(
-      id: "!2",
-      term: 1,
-      credits: 8,
-      subjects: [
-        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
-        Subject(semesterId: "!2", hours: 3, grade: Grades.bMinus),
-        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
-      ],
-      gpa: 2.24,
-    ),
-    Semester(
-      id: "!2",
-      term: 2,
-      credits: 8,
-      subjects: [
-        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
-        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
-        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
-      ],
-      gpa: 2.56,
-    ),
-    Semester(
-      id: "!2",
-      term: 3,
-      credits: 8,
-      subjects: [
-        Subject(semesterId: "!2", hours: 1, grade: Grades.a),
-        Subject(semesterId: "!2", hours: 1, grade: Grades.bMinus),
-        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
-      ],
-      gpa: 2.36,
-    ),
-    Semester(
-      id: "!2",
-      term: 1,
-      credits: 8,
-      subjects: [
-        Subject(semesterId: "!2", hours: 3, grade: Grades.a),
-        Subject(semesterId: "!2", hours: 3, grade: Grades.bMinus),
-        Subject(semesterId: "!2", hours: 2, grade: Grades.cPlus),
-      ],
-      gpa: 2.48,
-    ),
-  ];
-
-  static const SMUThoughts smu = SMUThoughts(
-    title: "Grande Finale",
-    description: "",
-    imagePath: AppAssets.smuLogo,
-  );
-
-  static Widget buildHelpButton(BuildContext context) {
-    return IconButton(
-      onPressed: () => AwesomeDialog(
-        context: context,
-        animType: AnimType.SCALE,
-        customHeader: Image.asset(AppAssets.smuLogoNoText),
-        title: AppStrings.welcomeMessage,
-        desc: AppStrings.eventDiscription,
-        btnOkText: AppStrings.goToSmuPage,
-        btnOkOnPress: () async => await launchUrl(
-          Uri.parse(AppStrings.smuPage),
-        ),
-        btnOkColor: AppColors.primaryColor,
-        btnCancelText: AppStrings.cancel,
-        btnCancelOnPress: () {},
-      ).show(),
-      icon: const Icon(
-        Icons.help,
-        color: Colors.black,
-      ),
-    );
-  }
-
-  static Future<dynamic> help(BuildContext context) {
-    return AwesomeDialog(
-      context: context,
-      animType: AnimType.SCALE,
-      customHeader: Image.asset(AppAssets.smuLogoNoText),
-      title: AppStrings.welcomeMessage,
-      desc: AppStrings.eventDiscription,
-      btnOkText: AppStrings.goToSmuPage,
-      btnOkOnPress: () async => await launchUrl(
-        Uri.parse(AppStrings.smuPage),
-      ),
-      btnOkColor: AppColors.primaryColor,
-      btnCancelText: AppStrings.cancel,
-      btnCancelOnPress: () {},
-    ).show();
-  }
-
-  static void showToast({
-    required String message,
-    Color? color,
-    ToastGravity? gravity,
-  }) {
-    Fluttertoast.showToast(
-      msg: message,
-      toastLength: Toast.LENGTH_SHORT,
-      backgroundColor: color ?? AppColors.hint,
-      gravity: gravity ?? ToastGravity.BOTTOM,
-    );
-  }
 }

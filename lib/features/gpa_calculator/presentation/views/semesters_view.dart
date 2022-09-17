@@ -26,17 +26,15 @@ class _SemestersViewState extends State<SemestersView> {
   @override
   void initState() {
     super.initState();
-    controller = GPACalculatorController(
-      bloc: context.read<GPACalculatorBloc>(),
-    );
+    controller =
+        GPACalculatorController(bloc: context.read<GPACalculatorBloc>());
     semesterController = StreamController<List<Semester>>();
     titleStreamController = StreamController<String>();
-    controller.getSemesters();
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    controller.close();
     semesterController.close();
     titleStreamController.close();
     super.dispose();
