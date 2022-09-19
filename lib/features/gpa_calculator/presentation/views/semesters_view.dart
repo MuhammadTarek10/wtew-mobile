@@ -42,22 +42,21 @@ class _SemestersViewState extends State<SemestersView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<GPACalculatorBloc, GPACalculatorState>(
-      listener: (context, state) {
-        if (state is SemesterDeletedSuccessState) {
-          controller.getSemesters();
-        } else if (state is SemestersLoadedSuccessState &&
-            state.semesters.isNotEmpty) {
-          titleStreamController
-              .add("${AppStrings.cgpa}: ${getCGPA(state.semesters)}");
-          semesterController.add(state.semesters);
-        } else if (state is SemestersLoadedSuccessState &&
-            state.semesters.isEmpty) {
-          titleStreamController.add(AppStrings.semesters);
-        }
-      },
-      builder: (context, state) {
-        return Scaffold(
+    return BlocListener<GPACalculatorBloc, GPACalculatorState>(
+        listener: (context, state) {
+          if (state is SemesterDeletedSuccessState) {
+            controller.getSemesters();
+          } else if (state is SemestersLoadedSuccessState &&
+              state.semesters.isNotEmpty) {
+            titleStreamController
+                .add("${AppStrings.cgpa}: ${getCGPA(state.semesters)}");
+            semesterController.add(state.semesters);
+          } else if (state is SemestersLoadedSuccessState &&
+              state.semesters.isEmpty) {
+            titleStreamController.add(AppStrings.semesters);
+          }
+        },
+        child: Scaffold(
           appBar: AppBar(
             elevation: 0,
             title: StreamBuilder<String>(
@@ -70,6 +69,15 @@ class _SemestersViewState extends State<SemestersView> {
                 }
               },
             ),
+            actions: [
+              IconButton(
+                onPressed: () async {
+                  await Navigator.pushNamed(context, AppRoutes.subjectRoute);
+                  controller.getSemesters();
+                },
+                icon: const Icon(Icons.add),
+              ),
+            ],
           ),
           body: StreamBuilder<List<Semester>>(
             stream: semesterController.stream,
@@ -95,18 +103,6 @@ class _SemestersViewState extends State<SemestersView> {
               }
             },
           ),
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: AppColors.floatingButtonColor,
-            child: const Icon(
-              Icons.add,
-            ),
-            onPressed: () async {
-              await Navigator.pushNamed(context, AppRoutes.subjectRoute);
-              controller.getSemesters();
-            },
-          ),
-        );
-      },
-    );
+        ));
   }
 }
