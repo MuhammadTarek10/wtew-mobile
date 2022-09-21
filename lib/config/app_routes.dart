@@ -6,6 +6,7 @@ import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_
 import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/views/semesters_view.dart';
 import 'package:wtew22/features/gpa_calculator/presentation/views/subject_view.dart';
+import 'package:wtew22/features/partners/presentation/views/partners_view.dart';
 import 'package:wtew22/features/talks/domain/entities/note.dart';
 import 'package:wtew22/features/talks/domain/entities/sections.dart';
 import 'package:wtew22/features/home_view.dart';
@@ -23,6 +24,7 @@ class AppRoutes {
   static const String noteDetailRoute = "/note_detail";
   static const String gpaCalculatorRoute = "/gpa-calculator";
   static const String subjectRoute = "/gpa-subjects";
+  static const String partnersRoute = "/partners";
 }
 
 class AppRouteGenerator {
@@ -46,6 +48,8 @@ class AppRouteGenerator {
       case AppRoutes.noteDetailRoute:
         return MaterialPageRoute(
             builder: (_) => NoteDetailsView(note: settings.arguments as Note));
+      case AppRoutes.partnersRoute:
+        return MaterialPageRoute(builder: (_) => const PartnersView());
       case AppRoutes.gpaCalculatorRoute:
         initGPA();
         return MaterialPageRoute(

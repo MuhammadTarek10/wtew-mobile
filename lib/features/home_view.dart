@@ -44,21 +44,29 @@ class _HomeViewState extends State<HomeView> {
           const Header(),
           const Divider(),
           DrawerItem(
+            title: AppStrings.talks,
+            icon: AppAssets.talks,
+            onTap: () {
+              if (ModalRoute.of(context)!.settings.name ==
+                  AppRoutes.homeRoute) {
+                Navigator.of(context).pushNamed(AppRoutes.homeRoute);
+              } else {
+                Navigator.pop(context);
+              }
+            },
+          ),
+          DrawerItem(
             title: AppStrings.gpaCalculator,
             icon: AppAssets.gpaIcon,
-            onTap: () =>
-                Navigator.pushNamed(context, AppRoutes.gpaCalculatorRoute),
+            onTap: () => Navigator.pushReplacementNamed(
+                context, AppRoutes.gpaCalculatorRoute),
           ),
-          // DrawerItem(
-          //   title: AppStrings.map,
-          //   icon: AppAssets.map,
-          //   onTap: () {},
-          // ),
-          // DrawerItem(
-          //   title: AppStrings.partners,
-          //   icon: AppAssets.partners,
-          //   onTap: () {},
-          // ),
+          DrawerItem(
+            title: AppStrings.partners,
+            icon: AppAssets.partners,
+            onTap: () => Navigator.pushReplacementNamed(
+                context, AppRoutes.partnersRoute),
+          ),
           // DrawerItem(
           //   title: AppStrings.settings,
           //   icon: AppAssets.settings,

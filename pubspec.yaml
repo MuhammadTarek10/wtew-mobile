@@ -81,6 +81,7 @@ flutter:
   assets:
     - assets/images/icon.png
     - assets/images/
+    - assets/partners/
     - assets/timeline_icons/
     - assets/sessions/
     - assets/sections/

@@ -8,12 +8,23 @@ class AppAssets {
   static const String partners = 'assets/images/partners.png';
   static const String semester = 'assets/images/semester.png';
   static const String subject = 'assets/images/book.png';
+  static const String talks = 'assets/images/talks.png';
 
   // sections
   static const String subjects = 'assets/sections/Subjects.png';
   static const String comparisons = 'assets/sections/Comparisons.png';
   static const String gpa = 'assets/sections/GPA.png';
   static const String softSkills = 'assets/sections/Soft Skills.png';
+
+  // partners
+  static const String awraaq = 'assets/partners/AWRAAQ.png';
+  static const String grafico = 'assets/partners/GRAFICO.png';
+  static const String makers = 'assets/partners/MAKERS.png';
+  static const String portal = 'assets/partners/PORTAL.png';
+  static const String stickertology = 'assets/partners/STICKRTOLOGY.png';
+  static const String varanda = 'assets/partners/VARANDA.png';
+  static const String zatech = 'assets/partners/ZATECH.png';
+  static const String qahwablaben = 'assets/partners/QAHWA BLABEN.png';
 
   // sessions
   static const String physics = 'assets/sessions/Physics.png';
