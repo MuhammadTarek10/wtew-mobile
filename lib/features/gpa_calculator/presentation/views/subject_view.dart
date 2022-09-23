@@ -29,7 +29,11 @@ class _SubjectsViewState extends State<SubjectsView> {
   @override
   void initState() {
     subjects = List.generate(
-        1, (index) => SubjectInputsWidget(data: data[index]),
+        1,
+        (index) => SubjectInputsWidget(
+              data: data[index],
+              onDelete: () => onDelete(data[index]),
+            ),
         growable: true);
     super.initState();
   }
@@ -58,7 +62,10 @@ class _SubjectsViewState extends State<SubjectsView> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      SubjectInputsWidget(data: data[index]),
+                      SubjectInputsWidget(
+                        data: data[index],
+                        onDelete: () => onDelete(data[index]),
+                      ),
                       SizedBox(width: context.width * 0.02),
                     ],
                   ),
@@ -86,7 +93,12 @@ class _SubjectsViewState extends State<SubjectsView> {
                   onTap: () {
                     setState(() {
                       data.add(SubjectInputData());
-                      subjects!.add(SubjectInputsWidget(data: data[counter++]));
+                      subjects!.add(
+                        SubjectInputsWidget(
+                          onDelete: () => onDelete(data[counter]),
+                          data: data[counter++],
+                        ),
+                      );
                     });
                   },
                   title: AppStrings.addSubject,
@@ -128,5 +140,13 @@ class _SubjectsViewState extends State<SubjectsView> {
         ),
       ),
     );
+  }
+
+  void onDelete(SubjectInputData data) {
+    setState(() {
+      this.data.remove(data);
+      subjects!.removeWhere((element) => element.data == data);
+      --counter;
+    });
   }
 }

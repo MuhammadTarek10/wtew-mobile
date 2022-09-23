@@ -44,8 +44,8 @@ class _HomeViewState extends State<HomeView> {
           const Header(),
           const Divider(),
           DrawerItem(
-            title: AppStrings.talks,
-            icon: AppAssets.talks,
+            title: AppStrings.notes,
+            icon: AppAssets.notes,
             onTap: () {
               if (ModalRoute.of(context)!.settings.name ==
                   AppRoutes.homeRoute) {

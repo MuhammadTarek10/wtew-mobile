@@ -41,9 +41,15 @@ class AppConstants {
         title: AppStrings.welcomeMessage,
         desc: AppStrings.eventDiscription,
         btnOkText: AppStrings.goToSmuPage,
-        btnOkOnPress: () async => await launchUrl(
-          Uri.parse(AppStrings.smuPage),
-        ),
+        btnOkOnPress: () async {
+          final link = Uri.parse(AppStrings.smuPage);
+          if (await canLaunchUrl(link)) {
+            await launchUrl(
+              link,
+              mode: LaunchMode.externalNonBrowserApplication,
+            );
+          }
+        },
         btnOkColor: AppColors.primaryColor,
         btnCancelText: AppStrings.cancel,
         btnCancelOnPress: () {},

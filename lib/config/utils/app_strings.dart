@@ -9,7 +9,7 @@ class AppStrings {
   static const String welcomeMessage = "WTEW '22";
   static const String goToSmuPage = "SMU Page";
   static const String cancel = "Cancel";
-  static const String talks = "Talks";
+  static const String notes = "Notes";
   static const String gpaCalculator = "GPA Calculator";
   static const String partners = "Partners";
   static const String map = "Map";

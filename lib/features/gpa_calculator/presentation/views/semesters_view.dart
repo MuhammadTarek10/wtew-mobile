@@ -117,8 +117,8 @@ class _SemestersViewState extends State<SemestersView> {
           const Header(),
           const Divider(),
           DrawerItem(
-            title: AppStrings.talks,
-            icon: AppAssets.talks,
+            title: AppStrings.notes,
+            icon: AppAssets.notes,
             onTap: () =>
                 Navigator.pushReplacementNamed(context, AppRoutes.homeRoute),
           ),

@@ -8,7 +8,7 @@ class AppAssets {
   static const String partners = 'assets/images/partners.png';
   static const String semester = 'assets/images/semester.png';
   static const String subject = 'assets/images/book.png';
-  static const String talks = 'assets/images/talks.png';
+  static const String notes = 'assets/images/notes.png';
 
   // sections
   static const String subjects = 'assets/sections/Subjects.png';
