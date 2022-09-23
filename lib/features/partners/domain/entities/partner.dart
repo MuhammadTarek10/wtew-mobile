@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:wtew22/config/utils/app_assets.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
 
 class Partner extends Equatable {
   final String name;
