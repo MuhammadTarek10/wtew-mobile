@@ -25,6 +25,7 @@ class AppAssets {
   static const String varanda = 'assets/partners/VARANDA.png';
   static const String zatech = 'assets/partners/ZATECH.png';
   static const String qahwablaben = 'assets/partners/QAHWA BLABEN.png';
+  static const String zigzag = 'assets/partners/ZIGZAG.png';
 
   // sessions
   static const String physics = 'assets/sessions/Physics.png';

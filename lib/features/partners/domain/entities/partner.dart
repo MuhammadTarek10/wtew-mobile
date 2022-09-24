@@ -80,6 +80,13 @@ class PartnersData {
     link: "",
   );
 
+  static const Partner zigzag = Partner(
+    name: "Zigzag",
+    description: "",
+    logo: AppAssets.zigzag,
+    link: "",
+  );
+
   static const List<Partner> partners = [
     awraaq,
     grafico,
@@ -89,5 +96,6 @@ class PartnersData {
     stickertology,
     varanda,
     zatech,
+    zigzag,
   ];
 }
