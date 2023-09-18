@@ -1,4 +1,4 @@
-import 'package:wtew22/features/gpa_calculator/domain/entities/subject.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/subject.dart';
 
 class SubjectModel extends Subject {
   const SubjectModel({

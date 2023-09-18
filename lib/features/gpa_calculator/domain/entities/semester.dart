@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/subject.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/subject.dart';
 
 class Semester extends Equatable {
   final String id;

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:wtew22/core/error/failures.dart';
-import 'package:wtew22/features/gpa_calculator/data/datasources/local_data_source.dart';
-import 'package:wtew22/features/gpa_calculator/data/models/semester.dart';
-import 'package:wtew22/features/gpa_calculator/domain/repositories/gpa_calculator_repository.dart';
+import 'package:wtew/core/error/failures.dart';
+import 'package:wtew/features/gpa_calculator/data/datasources/local_data_source.dart';
+import 'package:wtew/features/gpa_calculator/data/models/semester.dart';
+import 'package:wtew/features/gpa_calculator/domain/repositories/gpa_calculator_repository.dart';
 
 class GPACalculatorRepositoryImpl implements GPACalculatorRepository {
   final LocalDataSource localDataSource;

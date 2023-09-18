@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_colors.dart';
+import 'package:wtew/config/app_routes.dart';
+import 'package:wtew/config/utils/app_colors.dart';
 
-import 'package:wtew22/features/talks/domain/entities/note.dart';
+import 'package:wtew/features/talks/domain/entities/note.dart';
 
 class NoteCard extends StatelessWidget {
   const NoteCard({Key? key, required this.note}) : super(key: key);

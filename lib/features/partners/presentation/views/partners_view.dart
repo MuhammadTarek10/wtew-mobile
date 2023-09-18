@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_assets.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
-import 'package:wtew22/features/partners/domain/entities/partner.dart';
-import 'package:wtew22/features/partners/presentation/widgets/partner_list_view.dart';
-import 'package:wtew22/features/widgets/drawer_header.dart';
-import 'package:wtew22/features/widgets/drawer_item.dart';
+import 'package:wtew/config/app_routes.dart';
+import 'package:wtew/config/utils/app_assets.dart';
+import 'package:wtew/config/utils/app_strings.dart';
+import 'package:wtew/features/partners/domain/entities/partner.dart';
+import 'package:wtew/features/partners/presentation/widgets/partner_list_view.dart';
+import 'package:wtew/features/widgets/drawer_header.dart';
+import 'package:wtew/features/widgets/drawer_item.dart';
 
 // ignore: must_be_immutable
 class PartnersView extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/features/talks/domain/entities/note.dart';
-import 'package:wtew22/features/talks/presentation/views/timeline/pages/note/widgets/note_card.dart';
+import 'package:wtew/features/talks/domain/entities/note.dart';
+import 'package:wtew/features/talks/presentation/views/timeline/pages/note/widgets/note_card.dart';
 
 // ignore: must_be_immutable
 class NoteView extends StatelessWidget {
@@ -22,4 +22,3 @@ class NoteView extends StatelessWidget {
     );
   }
 }
-

@@ -1,4 +1,4 @@
-package com.tarek.wtew22
+package com.wtew.package.name
 
 import io.flutter.embedding.android.FlutterActivity
 

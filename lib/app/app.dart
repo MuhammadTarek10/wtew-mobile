@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_theme.dart';
+import 'package:wtew/config/app_routes.dart';
+import 'package:wtew/config/utils/app_theme.dart';
 
 class WTEWApp extends StatefulWidget {
   const WTEWApp({Key? key}) : super(key: key);

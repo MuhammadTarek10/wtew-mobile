@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/utils/app_colors.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
-import 'package:wtew22/features/talks/domain/entities/note.dart';
+import 'package:wtew/config/utils/app_colors.dart';
+import 'package:wtew/config/utils/app_media_query.dart';
+import 'package:wtew/features/talks/domain/entities/note.dart';
 
 class NoteDetailsView extends StatelessWidget {
   const NoteDetailsView({Key? key, required this.note}) : super(key: key);

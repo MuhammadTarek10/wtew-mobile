@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
-import 'package:wtew22/features/talks/domain/entities/sections.dart';
-import 'package:wtew22/features/talks/presentation/widgets/section_card.dart';
-import 'package:wtew22/features/talks/presentation/widgets/sections/section_animated_scroll_view.dart';
+import 'package:wtew/config/utils/app_media_query.dart';
+import 'package:wtew/features/talks/domain/entities/sections.dart';
+import 'package:wtew/features/talks/presentation/widgets/section_card.dart';
+import 'package:wtew/features/talks/presentation/widgets/sections/section_animated_scroll_view.dart';
 
 class SecionListView extends StatelessWidget {
   const SecionListView({

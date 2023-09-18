@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
-import 'package:wtew22/features/partners/domain/entities/partner.dart';
-import 'package:wtew22/features/partners/presentation/widgets/partner_animated_scroll.dart';
-import 'package:wtew22/features/partners/presentation/widgets/partner_card.dart';
-
+import 'package:wtew/config/utils/app_media_query.dart';
+import 'package:wtew/features/partners/domain/entities/partner.dart';
+import 'package:wtew/features/partners/presentation/widgets/partner_animated_scroll.dart';
+import 'package:wtew/features/partners/presentation/widgets/partner_card.dart';
 
 class PartnerListView extends StatelessWidget {
   const PartnerListView({

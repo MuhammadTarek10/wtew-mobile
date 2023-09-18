@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/utils/app_assets.dart';
-import 'package:wtew22/config/utils/app_constants.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/widgets/subject_inputs.dart';
+import 'package:wtew/config/utils/app_assets.dart';
+import 'package:wtew/config/utils/app_constants.dart';
+import 'package:wtew/config/utils/app_media_query.dart';
+import 'package:wtew/config/utils/app_strings.dart';
+import 'package:wtew/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
+import 'package:wtew/features/gpa_calculator/presentation/widgets/subject_inputs.dart';
 
 class SubjectsView extends StatefulWidget {
   const SubjectsView({
@@ -81,7 +81,7 @@ class _SubjectsViewState extends State<SubjectsView> {
                   onTap: () async {
                     if (await widget.controller.isSemesterRight(data)) {
                       widget.controller.addSemester();
-                      Navigator.pop(context);
+                      if (context.mounted) Navigator.pop(context);
                     } else {
                       AppConstants.showToast(message: AppStrings.invalidInputs);
                     }

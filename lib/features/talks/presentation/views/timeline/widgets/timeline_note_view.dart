@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/features/talks/domain/entities/note.dart';
-import 'package:wtew22/features/talks/presentation/views/timeline/pages/note/note_view.dart';
+import 'package:wtew/features/talks/domain/entities/note.dart';
+import 'package:wtew/features/talks/presentation/views/timeline/pages/note/note_view.dart';
 
 class TimelineNoteView extends StatelessWidget {
   const TimelineNoteView({Key? key, required this.notes}) : super(key: key);

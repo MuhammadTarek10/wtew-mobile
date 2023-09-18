@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
+import 'package:wtew/config/utils/app_strings.dart';
 
 abstract class Failure extends Equatable {
   final String message;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_colors.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
-import 'package:wtew22/config/utils/app_values.dart';
-import 'package:wtew22/features/talks/domain/entities/sections.dart';
+import 'package:wtew/config/app_routes.dart';
+import 'package:wtew/config/utils/app_colors.dart';
+import 'package:wtew/config/utils/app_media_query.dart';
+import 'package:wtew/config/utils/app_values.dart';
+import 'package:wtew/features/talks/domain/entities/sections.dart';
 
 class Section extends StatelessWidget {
   const Section({
@@ -42,7 +42,7 @@ class Section extends StatelessWidget {
           child: Center(
             child: Text(
               section.title,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     fontSize: context.width * 0.04,
                     fontWeight: FontWeight.bold,
                   ),

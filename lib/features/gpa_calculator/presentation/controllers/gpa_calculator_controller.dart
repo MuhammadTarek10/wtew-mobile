@@ -1,9 +1,9 @@
-import 'package:wtew22/core/injector.dart';
-import 'package:wtew22/features/gpa_calculator/data/datasources/local_data_source.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/controllers/helper.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/widgets/subject_inputs.dart';
+import 'package:wtew/core/injector.dart';
+import 'package:wtew/features/gpa_calculator/data/datasources/local_data_source.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/semester.dart';
+import 'package:wtew/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
+import 'package:wtew/features/gpa_calculator/presentation/controllers/helper.dart';
+import 'package:wtew/features/gpa_calculator/presentation/widgets/subject_inputs.dart';
 
 class GPACalculatorController {
   final GPACalculatorBloc bloc;

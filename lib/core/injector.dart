@@ -1,11 +1,11 @@
 import 'package:get_it/get_it.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:wtew22/config/utils/app_constants.dart';
-import 'package:wtew22/features/gpa_calculator/data/datasources/local_data_source.dart';
-import 'package:wtew22/features/gpa_calculator/data/repositories/gpa_calculator_repository_impl.dart';
-import 'package:wtew22/features/gpa_calculator/domain/usecases/usecases.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
+import 'package:wtew/config/utils/app_constants.dart';
+import 'package:wtew/features/gpa_calculator/data/datasources/local_data_source.dart';
+import 'package:wtew/features/gpa_calculator/data/repositories/gpa_calculator_repository_impl.dart';
+import 'package:wtew/features/gpa_calculator/domain/usecases/usecases.dart';
+import 'package:wtew/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
+import 'package:wtew/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
 
 final instance = GetIt.instance;
 

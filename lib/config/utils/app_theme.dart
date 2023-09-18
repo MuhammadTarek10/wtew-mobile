@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/utils/app_colors.dart';
+import 'package:wtew/config/utils/app_colors.dart';
 
 class AppTheme {
   static ThemeData getAppTheme() {

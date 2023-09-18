@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wtew22/core/usecases.dart';
-import 'package:wtew22/features/gpa_calculator/data/models/semester.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
-import 'package:wtew22/features/gpa_calculator/domain/usecases/usecases.dart';
+import 'package:wtew/core/usecases.dart';
+import 'package:wtew/features/gpa_calculator/data/models/semester.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/semester.dart';
+import 'package:wtew/features/gpa_calculator/domain/usecases/usecases.dart';
 
 part 'gpa_calculator_event.dart';
 part 'gpa_calculator_state.dart';

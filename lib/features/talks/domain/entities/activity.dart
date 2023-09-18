@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:wtew22/features/talks/domain/entities/note.dart';
+import 'package:wtew/features/talks/domain/entities/note.dart';
 
 enum ActivityType { session, workshop }
 

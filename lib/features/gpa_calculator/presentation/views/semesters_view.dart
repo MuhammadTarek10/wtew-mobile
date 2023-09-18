@@ -2,16 +2,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_assets.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/controllers/helper.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/widgets/semester_card.dart';
-import 'package:wtew22/features/widgets/drawer_header.dart';
-import 'package:wtew22/features/widgets/drawer_item.dart';
+import 'package:wtew/config/app_routes.dart';
+import 'package:wtew/config/utils/app_assets.dart';
+import 'package:wtew/config/utils/app_strings.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/semester.dart';
+import 'package:wtew/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
+import 'package:wtew/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
+import 'package:wtew/features/gpa_calculator/presentation/controllers/helper.dart';
+import 'package:wtew/features/gpa_calculator/presentation/widgets/semester_card.dart';
+import 'package:wtew/features/widgets/drawer_header.dart';
+import 'package:wtew/features/widgets/drawer_item.dart';
 
 class SemestersView extends StatefulWidget {
   const SemestersView({Key? key}) : super(key: key);

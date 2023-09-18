@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:wtew22/core/error/failures.dart';
-import 'package:wtew22/features/gpa_calculator/data/models/semester.dart';
+import 'package:wtew/core/error/failures.dart';
+import 'package:wtew/features/gpa_calculator/data/models/semester.dart';
 
 abstract class GPACalculatorRepository {
   Future<Either<Failure, Unit>> addSemester(SemesterModel semester);

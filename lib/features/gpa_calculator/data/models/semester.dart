@@ -1,4 +1,4 @@
-import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/semester.dart';
 
 class SemesterModel extends Semester {
   const SemesterModel({

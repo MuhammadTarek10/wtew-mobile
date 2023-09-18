@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:wtew22/config/utils/app_constants.dart';
-import 'package:wtew22/features/gpa_calculator/data/models/semester.dart';
+import 'package:wtew/config/utils/app_constants.dart';
+import 'package:wtew/features/gpa_calculator/data/models/semester.dart';
 
 abstract class LocalDataSource {
   Future<Unit> addSemester(SemesterModel semester);

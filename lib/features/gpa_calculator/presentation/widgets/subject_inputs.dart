@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
-import 'package:wtew22/config/utils/app_strings.dart';
+import 'package:wtew/config/utils/app_media_query.dart';
+import 'package:wtew/config/utils/app_strings.dart';
 
 class SubjectInputsWidget extends StatefulWidget {
   const SubjectInputsWidget({

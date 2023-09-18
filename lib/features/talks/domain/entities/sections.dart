@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:wtew22/features/talks/domain/entities/activity.dart';
-import 'package:wtew22/features/talks/domain/entities/note.dart';
+import 'package:wtew/features/talks/domain/entities/activity.dart';
+import 'package:wtew/features/talks/domain/entities/note.dart';
 
 abstract class BaseSection extends Equatable {
   final String title;

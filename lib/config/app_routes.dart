@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wtew22/app/splash_view.dart';
-import 'package:wtew22/core/injector.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/views/semesters_view.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/views/subject_view.dart';
-import 'package:wtew22/features/partners/presentation/views/partners_view.dart';
-import 'package:wtew22/features/talks/domain/entities/note.dart';
-import 'package:wtew22/features/talks/domain/entities/sections.dart';
-import 'package:wtew22/features/home_view.dart';
-import 'package:wtew22/features/talks/presentation/views/timeline/pages/note/note_details_view.dart';
-import 'package:wtew22/features/talks/presentation/views/timeline/pages/note/note_view.dart';
-import 'package:wtew22/features/talks/presentation/views/timeline/section_view.dart';
-import 'package:wtew22/features/talks/presentation/views/timeline/widgets/timeline_note_view.dart';
+import 'package:wtew/app/splash_view.dart';
+import 'package:wtew/core/injector.dart';
+import 'package:wtew/features/gpa_calculator/presentation/bloc/gpa_calculator_bloc.dart';
+import 'package:wtew/features/gpa_calculator/presentation/controllers/gpa_calculator_controller.dart';
+import 'package:wtew/features/gpa_calculator/presentation/views/semesters_view.dart';
+import 'package:wtew/features/gpa_calculator/presentation/views/subject_view.dart';
+import 'package:wtew/features/partners/presentation/views/partners_view.dart';
+import 'package:wtew/features/talks/domain/entities/note.dart';
+import 'package:wtew/features/talks/domain/entities/sections.dart';
+import 'package:wtew/features/home_view.dart';
+import 'package:wtew/features/talks/presentation/views/timeline/pages/note/note_details_view.dart';
+import 'package:wtew/features/talks/presentation/views/timeline/pages/note/note_view.dart';
+import 'package:wtew/features/talks/presentation/views/timeline/section_view.dart';
+import 'package:wtew/features/talks/presentation/views/timeline/widgets/timeline_note_view.dart';
 
 class AppRoutes {
   static const String splashRoute = "/";

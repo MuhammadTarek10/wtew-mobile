@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wtew22/features/talks/domain/entities/sections.dart';
-import 'package:wtew22/features/talks/presentation/views/timeline/widgets/timeline_card.dart';
+import 'package:wtew/features/talks/domain/entities/sections.dart';
+import 'package:wtew/features/talks/presentation/views/timeline/widgets/timeline_card.dart';
 
 class TimelineView extends StatelessWidget {
   const TimelineView({Key? key, required this.section}) : super(key: key);

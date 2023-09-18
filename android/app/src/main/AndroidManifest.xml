@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tarek.wtew22">
+    package="com.wtew.package.name">
    <application
-        android:label="WTEW22"
+        android:label="wtew"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

@@ -1,6 +1,6 @@
-import 'package:wtew22/features/gpa_calculator/domain/entities/semester.dart';
-import 'package:wtew22/features/gpa_calculator/domain/entities/subject.dart';
-import 'package:wtew22/features/gpa_calculator/presentation/widgets/subject_inputs.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/semester.dart';
+import 'package:wtew/features/gpa_calculator/domain/entities/subject.dart';
+import 'package:wtew/features/gpa_calculator/presentation/widgets/subject_inputs.dart';
 
 Semester buildSemester(String id, int term, List<SubjectInputData> data) {
   final subjects = data

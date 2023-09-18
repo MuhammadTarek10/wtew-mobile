@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:wtew22/config/app_routes.dart';
-import 'package:wtew22/config/utils/app_assets.dart';
-import 'package:wtew22/config/utils/app_colors.dart';
-import 'package:wtew22/config/utils/app_values.dart';
+import 'package:wtew/config/app_routes.dart';
+import 'package:wtew/config/utils/app_assets.dart';
+import 'package:wtew/config/utils/app_colors.dart';
+import 'package:wtew/config/utils/app_values.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);

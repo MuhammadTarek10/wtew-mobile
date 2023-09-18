@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wtew22/config/utils/app_colors.dart';
-import 'package:wtew22/config/utils/app_media_query.dart';
-import 'package:wtew22/features/partners/domain/entities/partner.dart';
+import 'package:wtew/config/utils/app_colors.dart';
+import 'package:wtew/config/utils/app_media_query.dart';
+import 'package:wtew/features/partners/domain/entities/partner.dart';
 
 class PartnerCard extends StatelessWidget {
   const PartnerCard({Key? key, required this.partner}) : super(key: key);
