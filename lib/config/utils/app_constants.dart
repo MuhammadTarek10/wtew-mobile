@@ -16,15 +16,15 @@ class AppConstants {
   static const String databaseName = "gpa-calculator";
   static const String databaseSemesterTableName = "semesters";
   static const String databaseColSemesterId = "id";
-  static const String databseColSemesterTerm = "term";
-  static const String databaseColSemeterGPA = "gpa";
+  static const String datableColSemesterTerm = "term";
+  static const String databaseColSemesterGPA = "gpa";
   static const String databaseColSemesterCredits = "credits";
 
   static const String databaseSubjectTableName = "subjects";
   static const String databaseColSubjectSemesterId = "semester_id";
   static const String databaseColSubjectName = "name";
   static const String databaseColSubjectHours = "hours";
-  static const String databseColSubjectGrade = "grade";
+  static const String datableColSubjectGrade = "grade";
 
   static const SMUThoughts smu = SMUThoughts(
     title: "Grande Finale",
@@ -36,7 +36,7 @@ class AppConstants {
     return IconButton(
       onPressed: () => AwesomeDialog(
         context: context,
-        animType: AnimType.SCALE,
+        animType: AnimType.scale,
         customHeader: Image.asset(AppAssets.smuLogoNoText),
         title: AppStrings.welcomeMessage,
         desc: AppStrings.eventDiscription,
@@ -64,7 +64,7 @@ class AppConstants {
   static Future<dynamic> help(BuildContext context) {
     return AwesomeDialog(
       context: context,
-      animType: AnimType.SCALE,
+      animType: AnimType.scale,
       customHeader: Image.asset(AppAssets.smuLogoNoText),
       title: AppStrings.welcomeMessage,
       desc: AppStrings.eventDiscription,
@@ -92,7 +92,7 @@ class AppConstants {
   }
 }
 
-class TalksData {
+class TalksData22 {
   static const String sessionPlace = "K1 - Electrical Building";
 
   static const BaseSection subjects = Subjects(
@@ -299,7 +299,7 @@ class TalksData {
             "All of this subject has no sections.",
             "English: is one hour subject and technical.",
             "Human rights: is zero hour subject.",
-            "History: is two hours subject and has two partsone of them is Engineering History and the other one is Architectural engineering.",
+            "History: is two hours subject and has two parts one of them is Engineering History and the other one is Architectural engineering.",
             " All this subject not close any other subject.",
           ],
           imagePath: AppAssets.humanities,
@@ -559,9 +559,9 @@ class TalksData {
             "3. Theoretical subjects<T>",
             "These are studied to enhance the understanding of main subjects (Design - Building).",
           ],
-          imagePath: AppAssets.archtecture,
+          imagePath: AppAssets.architecture,
         ),
-        activityIcon: AppAssets.archetictureIcon,
+        activityIcon: AppAssets.architectureIcon,
         title: "Architecture",
         description: "Architecture",
         date: "dayDate",
@@ -616,7 +616,7 @@ class TalksData {
             "Habit Developers – Create healthy habits to encourage time management.",
             "5. Stop Procrastinating<T>",
             "10-minute technique",
-            "Using favourite distractions as rewards",
+            "Using favorite distractions as rewards",
             "Changing the study environment",
             "6. Avoid Multi-tasking",
             "Psychological studies have shown that multi-tasking does not save time. In fact, the opposite is often true. You lose time when switching from one task to another, resulting in a loss of productivity",
@@ -625,7 +625,7 @@ class TalksData {
             "8. Stay Healthy<T>",
             "The care and attention you give yourself is an important investment of time. Scheduling time to relax or do nothing helps you rejuvenate physically and mentally, enabling you to accomplish tasks more quickly and easily",
           ],
-          imagePath: AppAssets.timeManagment,
+          imagePath: AppAssets.timeManagement,
         ),
         activityIcon: AppAssets.timeManagementIcon,
         title: "Time Management",
@@ -683,7 +683,7 @@ class TalksData {
           ],
           imagePath: AppAssets.selfLearning,
         ),
-        activityIcon: AppAssets.selcLearningIcon,
+        activityIcon: AppAssets.selfLearningIcon,
         title: "Self Learning",
         description: "Self Learning",
         date: "date",

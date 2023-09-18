@@ -1,4 +1,4 @@
-package com.wtew.package.name
+package com.wtew
 
 import io.flutter.embedding.android.FlutterActivity
 

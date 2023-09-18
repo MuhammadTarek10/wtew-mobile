@@ -14,8 +14,8 @@ Future<dynamic> _createDatabase(Database db, int version) async {
     '''
   CREATE TABLE IF NOT EXISTS "${AppConstants.databaseSemesterTableName}" (
     ${AppConstants.databaseColSemesterId} TEXT PRIMARY KEY,
-    ${AppConstants.databseColSemesterTerm} INTEGER NOT NULL,
-    ${AppConstants.databaseColSemeterGPA} DOUBLE NOT NULL,
+    ${AppConstants.datableColSemesterTerm} INTEGER NOT NULL,
+    ${AppConstants.databaseColSemesterGPA} DOUBLE NOT NULL,
     ${AppConstants.databaseColSemesterCredits} int NOT NULL
   )
   ''',
@@ -26,7 +26,7 @@ Future<dynamic> _createDatabase(Database db, int version) async {
     CREATE TABLE IF NOT EXISTS "${AppConstants.databaseSubjectTableName}" (
       ${AppConstants.databaseColSubjectName} TEXT NOT NULL,
       ${AppConstants.databaseColSubjectHours} INTEGER NOT NULL,
-      ${AppConstants.databseColSubjectGrade} TEXT NOT NULL,
+      ${AppConstants.datableColSubjectGrade} TEXT NOT NULL,
       ${AppConstants.databaseColSubjectSemesterId} TEXT NOT NULL,
       FOREIGN KEY (${AppConstants.databaseColSubjectSemesterId}) REFERENCES ${AppConstants.databaseSemesterTableName} (${AppConstants.databaseColSemesterId})
     )

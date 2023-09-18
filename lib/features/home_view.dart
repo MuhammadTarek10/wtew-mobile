@@ -18,22 +18,53 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  List<BaseSection> sections = [
-    TalksData.subjects,
-    TalksData.comparisons,
-    TalksData.softSkills,
-    TalksData.gpa,
+  List<BaseSection> sections22 = [
+    TalksData22.subjects,
+    TalksData22.comparisons,
+    TalksData22.softSkills,
+    TalksData22.gpa,
+  ];
+
+  List<BaseSection> sections23 = [
+    TalksData22.subjects,
+    TalksData22.comparisons,
+    TalksData22.softSkills,
+    TalksData22.gpa,
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.welcomeMessage),
-        actions: [AppConstants.buildHelpButton(context)],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(AppStrings.welcomeMessage),
+          actions: [AppConstants.buildHelpButton(context)],
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                child: Text(
+                  "WTEW23",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  "WTEW22",
+                  style: TextStyle(color: Colors.black),
+                ),
+              ),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            SectionListView(sections: sections23),
+            SectionListView(sections: sections22),
+          ],
+        ),
+        drawer: buildDrawer(context),
       ),
-      body: SecionListView(sections: sections),
-      drawer: buildDrawer(context),
     );
   }
 
@@ -61,12 +92,12 @@ class _HomeViewState extends State<HomeView> {
             onTap: () => Navigator.pushReplacementNamed(
                 context, AppRoutes.gpaCalculatorRoute),
           ),
-          DrawerItem(
-            title: AppStrings.partners,
-            icon: AppAssets.partners,
-            onTap: () => Navigator.pushReplacementNamed(
-                context, AppRoutes.partnersRoute),
-          ),
+          // DrawerItem(
+          //   title: AppStrings.partners,
+          //   icon: AppAssets.partners,
+          //   onTap: () => Navigator.pushReplacementNamed(
+          //       context, AppRoutes.partnersRoute),
+          // ),
           // DrawerItem(
           //   title: AppStrings.settings,
           //   icon: AppAssets.settings,
@@ -78,8 +109,8 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-class HomeSecions extends StatelessWidget {
-  const HomeSecions({
+class HomeSections extends StatelessWidget {
+  const HomeSections({
     Key? key,
     required this.sections,
   }) : super(key: key);

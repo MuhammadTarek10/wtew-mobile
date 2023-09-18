@@ -29,7 +29,7 @@ class AppAssets {
 
   // sessions
   static const String physics = 'assets/sessions/Physics.png';
-  static const String archtecture = 'assets/sessions/Archtecture.png';
+  static const String architecture = 'assets/sessions/Archtecture.png';
   static const String chemistry = 'assets/sessions/chemistry.png';
   static const String civilVsTech =
       'assets/sessions/Civil Work  _ Technical Teams.png';
@@ -40,11 +40,11 @@ class AppAssets {
   static const String humanities = 'assets/sessions/humanities.png';
   static const String production = 'assets/sessions/production.png';
   static const String selfLearning = 'assets/sessions/self learning.png';
-  static const String timeManagment = 'assets/sessions/Time Management.png';
+  static const String timeManagement = 'assets/sessions/Time Management.png';
   static const String mathAndMechanics = 'assets/sessions/math _ mechanics.png';
 
   // timeline-icons
-  static const String archetictureIcon =
+  static const String architectureIcon =
       "assets/timeline_icons/archticture.png";
   static const String chemistryIcon = "assets/timeline_icons/chemistry.png";
   static const String computerIcon = "assets/timeline_icons/computer.png";
@@ -56,7 +56,7 @@ class AppAssets {
       "assets/timeline_icons/math _ mechanics .png";
   static const String physicsIcon = "assets/timeline_icons/physics.png";
   static const String productionIcon = "assets/timeline_icons/production.png";
-  static const String selcLearningIcon =
+  static const String selfLearningIcon =
       "assets/timeline_icons/self-learning.png";
   static const String civilAndTechnicalIcon =
       "assets/timeline_icons/technical.png";

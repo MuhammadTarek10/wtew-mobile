@@ -53,8 +53,8 @@ class LocalDataSourceImpl implements LocalDataSource {
       AppConstants.databaseSemesterTableName,
       columns: [
         AppConstants.databaseColSemesterId,
-        AppConstants.databseColSemesterTerm,
-        AppConstants.databaseColSemeterGPA,
+        AppConstants.datableColSemesterTerm,
+        AppConstants.databaseColSemesterGPA,
         AppConstants.databaseColSemesterCredits,
       ],
     );

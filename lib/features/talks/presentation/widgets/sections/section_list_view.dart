@@ -4,8 +4,8 @@ import 'package:wtew/features/talks/domain/entities/sections.dart';
 import 'package:wtew/features/talks/presentation/widgets/section_card.dart';
 import 'package:wtew/features/talks/presentation/widgets/sections/section_animated_scroll_view.dart';
 
-class SecionListView extends StatelessWidget {
-  const SecionListView({
+class SectionListView extends StatelessWidget {
+  const SectionListView({
     Key? key,
     required this.sections,
   }) : super(key: key);
