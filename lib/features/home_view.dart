@@ -26,10 +26,10 @@ class _HomeViewState extends State<HomeView> {
   ];
 
   List<BaseSection> sections23 = [
-    TalksData22.subjects,
-    TalksData22.comparisons,
-    TalksData22.softSkills,
-    TalksData22.gpa,
+    TalksData23.subjects,
+    TalksData23.comparisons,
+    TalksData23.softSkills,
+    TalksData23.gpa,
   ];
 
   @override
