@@ -63,9 +63,9 @@ class _SemestersViewState extends State<SemestersView> {
           elevation: 0,
           title: StreamBuilder<String>(
             stream: titleStreamController.stream,
-            builder: (context, snaphot) {
-              if (snaphot.hasData) {
-                return Text(snaphot.data!);
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data!);
               } else {
                 return const Text(AppStrings.semesters);
               }
@@ -134,12 +134,12 @@ class _SemestersViewState extends State<SemestersView> {
                   Navigator.pop(context);
                 }
               }),
-          DrawerItem(
-            title: AppStrings.partners,
-            icon: AppAssets.partners,
-            onTap: () => Navigator.pushReplacementNamed(
-                context, AppRoutes.partnersRoute),
-          ),
+          // DrawerItem(
+          //   title: AppStrings.partners,
+          //   icon: AppAssets.partners,
+          //   onTap: () => Navigator.pushReplacementNamed(
+          //       context, AppRoutes.partnersRoute),
+          // ),
           // DrawerItem(
           //   title: AppStrings.settings,
           //   icon: AppAssets.settings,

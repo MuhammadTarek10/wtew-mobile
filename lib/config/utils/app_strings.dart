@@ -11,7 +11,6 @@ class AppStrings {
   static const String cancel = "Cancel";
   static const String notes = "Notes";
   static const String gpaCalculator = "GPA Calculator";
-  static const String partners = "Partners";
   static const String map = "Map";
   static const String settings = "Settings";
 

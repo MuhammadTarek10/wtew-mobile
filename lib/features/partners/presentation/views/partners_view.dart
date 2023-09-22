@@ -42,18 +42,18 @@ class PartnersView extends StatelessWidget {
             onTap: () => Navigator.pushReplacementNamed(
                 context, AppRoutes.gpaCalculatorRoute),
           ),
-          DrawerItem(
-              title: AppStrings.partners,
-              icon: AppAssets.partners,
-              onTap: () {
-                if (ModalRoute.of(context)!.settings.name ==
-                    AppRoutes.partnersRoute) {
-                  Navigator.of(context)
-                      .pushReplacementNamed(AppRoutes.partnersRoute);
-                } else {
-                  Navigator.pop(context);
-                }
-              }),
+          // DrawerItem(
+          //     title: AppStrings.partners,
+          //     icon: AppAssets.partners,
+          //     onTap: () {
+          //       if (ModalRoute.of(context)!.settings.name ==
+          //           AppRoutes.partnersRoute) {
+          //         Navigator.of(context)
+          //             .pushReplacementNamed(AppRoutes.partnersRoute);
+          //       } else {
+          //         Navigator.pop(context);
+          //       }
+          //     }),
           // DrawerItem(
           //   title: AppStrings.settings,
           //   icon: AppAssets.settings,
